@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="vishal, rvishal, rvishal.com, actor vishal, model vishal, web designer, web developer, chennai" />
+<meta name="author" content="rvishal.com" />
+<meta name="distrbution" content="global" />
+<meta name="description" content="vishal is a hardcore full stack web developer from chennai who also does modelling and acting in his leisure time" />
+<title>Web developer - Vishal | Chennai | rvishal.com</title>
+
+<style type="text/css">
+body
+{
+background: white;
+font-family: 'Lato', helvetica, arial, sans-serif;
+font-size: 16px;
+color: #222;
+padding:30px;
+font-family:arial;
+}
+
+.container
+{
+background-color: #ececec;
+width:1180px;
+margin:auto;
+
+}
+
+#header
+{
+padding:23px 20px 23px 20px;
+height:41px;
+
+}
+
+.left
+{
+float:left;
+}
+
+.right
+{
+float:right;
+}
+
+ h1 
+ {
+    font-size: 2.5em;
+    font-weight: 700;
+    font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+    margin-bottom: 0px;
+	margin-top:5px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-left: 2px;
+    font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+}
+.name
+{
+padding-left:2%
+}
+img
+{
+border-radius: 101px;
+height: 131px;
+}
+.left_25
+{
+float:left;
+width:25%;
+padding-left:25px;
+}
+.right_75
+{
+float: left;
+width: 62%;
+padding-right: 25px;
+padding-left: 27px;
+
+line-height: 25px;
+}
+.divider
+{
+height:3px;
+background-color:#1d66b5;
+}
+.clr
+{
+color:#1d66b5;
+}
+h3
+{
+font-size:24px;
+}
+.hr
+{
+height: 1px;
+background: lightgray;
+margin-left: 3%;
+margin-right: 7%;
+}
+.date
+{
+font-style: italic;
+margin-top:-13px;
+}
+section ul
+{
+padding-left:13px;
+}
+#blog
+{
+padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div id="header">
+
+
+<div class="left name">  <h2 style="margin-top:0px">Blog - Objects and its internal Representation in javascript</h2></div>
+
+
+</div>
+<div class="divider"></div>
+
+<div  id="blog">
+<div class="z ab ac ae af cl ah ai"><p id="0af9" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Objects, in JavaScript, is it’s most important data-type and forms the building blocks for modern JavaScript. These objects are quite different from JavaScript’s primitive data-types(Number, String, Boolean, null, undefined and symbol) in the sense that while these primitive data-types all store a single value each (depending on their types).</p><p id="a208" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Objects are more complex and each object may contain any combination of these primitive data-types as well as reference data-types.<br> An object, is a reference data type. Variables that are assigned a reference value are given a reference or a pointer to that value. That reference or pointer points to the location in memory where the object is stored. The variables don’t actually store the value.</p><p id="10a5" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Loosely speaking, objects in JavaScript may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs. These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.<br> An object can be created with figure brackets {…} with an optional list of properties. A property is a “key: value” pair, where a key is a string (also called a “property name”), and value can be anything.</p><p id="6f6b" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">To understand this rather abstract definition, let us look at an example of a JavaScript Object :</p><p id="91f7" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">let school = {<br> name : “Vivekananda School”,<br> location : “Delhi”,<br> established : “1971”<br> }<br> In the above example “name”, “location”, “established” are all “keys” and “Vivekananda School”, “Delhi” and 1971 are values of these keys respectively.</p><p id="38f5" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Each of these keys is referred to as properties of the object. An object in JavaScript may also have a function as a member, in which case it will be known as a method of that object.</p><p id="f558" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Let us see such an example :<br> // javascript code demonstrating a simple object<br> let school = {<br> name: ‘Vivekananda School’,<br> location : ‘Delhi’,<br> established : ‘1971’,<br> displayInfo : function(){<br> console.log(<code class="fy fz ga gb gc b">${school.name} was established <br> in ${school.established} at ${school.location}</code>);<br> }<br> }<br> school.displayInfo();</p><p id="ed51" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Output:<br> In the above example, “displayinfo” is a method of the school object that is being used to work with the object’s data, stored in its properties.<br> Properties of JavaScript Object<br> The property names can be strings or numbers. In case the property names are numbers, they must be accessed using the “bracket notation” like this :<br> let school = {<br> name: ‘Vivekananda School’,<br> location : ‘Delhi’,<br> established : ‘1971’,<br> 20 : 1000,<br> displayInfo : function(){<br> console.log(<code class="fy fz ga gb gc b">The value of the key 20 is ${school[‘20’]}</code>);<br> }<br> }<br> school.displayInfo();</p><p id="c800" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Output:<br> But more on the bracket notation later.<br> Property names can also be strings with more than one space separated words. In which case, these property names must be enclosed in quotes :<br> let school = {<br> “school name” : “Vivekananda School”,<br> }<br> Like property names which are numbers, they must also be accessed using the bracket notation.</p><p id="280a" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Like if we want to access the ‘Vivekananda’ from ‘Vivekananda School’ we can do something like this:<br> // bracket notation <br> let school = {<br> name: ‘Vivekananda School’,<br> displayInfo : function(){<br> console.log(<code class="fy fz ga gb gc b">${school.name.split(‘ ‘)[0]}</code>);<br> }<br> }<br> school.displayInfo(); // Vivekananda</p><p id="00d1" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Output:<br> In the above code, we made use of bracket notation and also split method provided by javascript which you will learn about in strings article.<br> Creating Objects<br> There are several ways or syntax’s to create objects. One of which, known as the Object literal syntax, we have already used. Besides the object literal syntax, objects in JavaScript may also be created using the constructors, Object Constructor or the prototype pattern.<br> Using the Object literal syntax : Object literal syntax uses the {…} notation to initialize an object an its methods/properties directly.</p><p id="fe00" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Let us look at an example of creating objects using this method :<br> var obj = {<br> member1 : value1,<br> member2 : value2,<br> };<br> These members can be anything — strings, numbers, functions, arrays or even other objects. An object like this is referred to as an object literal. This is different from other methods of object creation which involve using constructors and classes or prototypes, which have been discussed below.</p><p id="4f80" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Object Constructor : Another way to create objects in JavaScript involves using the “Object” constructor. The Object constructor creates an object wrapper for the given value. This, used in conjunction with the “new” keyword allows us to initialize new objects.<br> Example :<br> const school = new Object();<br> school.name = ‘Vivekanada school’;<br> school.location = ‘Delhi’;<br> school.established = 1971;</p><p id="83ce" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">school.displayInfo = function(){<br> console.log(<code class="fy fz ga gb gc b">${school.name} was established <br> in ${school.established} at ${school.location}</code>);<br> }</p><p id="004f" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">school.displayInfo();<br> Output:<br> The two methods mentioned above are not well suited to programs that require the creation of multiple objects of the same kind, as it would involve repeatedly writing the above lines of code for each such object. To deal with this problem, we can make use of two other methods of object creation in JavaScript that reduces this burden significantly, as mentioned below:<br> Constructors: Constructors in JavaScript, like in most other OOP languages, provides a template for creation of objects. In other words, it defines a set of properties and methods that would be common to all objects initialized using the constructor.</p><p id="c47c" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Let us see an example :<br> function Vehicle(name, maker) {<br> this.name = name;<br> this.maker = maker;<br> }</p><p id="3d42" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">let car1 = new Vehicle(‘Fiesta’, ‘Ford’);<br> let car2 = new Vehicle(‘Santa Fe’, ‘Hyundai’)</p><p id="eb3d" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">console.log(car1.name); // Output: Fiesta<br> console.log(car2.name); // Output: Santa Fe</p><p id="cb35" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Output:<br> Notice the usage of the “new” keyword before the function Vehicle. Using the “new” keyword in this manner before any function turns it into a constructor. What the “new Vehicle()” actually does is :<br> It creates a new object and sets the constructor property of the object to schools (It is important to note that this property is a special default property that is not enumerable and cannot be changed by setting a “constructor: someFunction” property manually).</p><p id="66f0" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Then, it sets up the object to work with the Vehicle function’s prototype object ( Each function in JavaScript gets a prototype object, which is initially just an empty object but can be modified.The object, when instantiated inherits all properties from its constructor’s prototype object).</p><p id="a480" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Then calls Vehicle() in the context of the new object, which means that when the “this” keyword is encountered in the constructor(vehicle()), it refers to the new object that was created in the first step.<br> Once this is finished, the newly created object is returned to car1 and car2(in the above example).</p><p id="8c61" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Inside classes, there can be special methods named constructor().<br> class people {<br> constructor()<br> {<br> this.name = “Adam”;<br> }<br> }</p><p id="911a" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">let person1 = new people();</p><p id="328c" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">// Output : Adam <br> console.log(person1.name);</p><p id="2492" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Output:<br> Having more than one function in a class with the name of constructor() results in an error.<br> Prototypes : Another way to create objects involves using prototypes. Every JavaScript function has a prototype object property by default(it is empty by default). Methods or properties may be attached to this property. A detailed description of prototypes is beyond the scope of this introduction to objects.</p><p id="ffa9" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">However you may familiarize yourself with the basic syntax used as below:<br> let obj = Object.create(prototype_object, propertiesObject)<br> // the second propertiesObject argument is optional<br> An example of making use of the Object.create() method is:<br> let footballers = {<br> position: “Striker”<br> }</p><p id="8838" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">let footballer1 = Object.create(footballers);</p><p id="c8ea" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">// Output : Striker <br> console.log(footballer1.position);<br> Output:<br> In the above example footballers served as a prototype for creating the object “footballer1”.</p><p id="5ca2" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">All objects created in this way inherits all properties and methods from its prototype objects. Prototypes can have prototypes and those can have prototypes and so on. This is referred to as prototype chaining in JavaScript. This chain terminates with the Object.prototype which is the default prototype fallback for all objects. Javascript objects, by default, inherit properties and methods from Object.prototype but these may easily be overridden. It is also interesting to note that the default prototype is not always Object.prototype.For example Strings and Arrays have their own default prototypes — String.prototype and Array.prototype respectively.</p><p id="6daf" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Accessing Object Members<br> Object members(properties or methods) can be accessed using the<br> dot notation :<br> (objectName.memberName)<br> let school = {<br> name : “Vivekanada”,<br> location : “Delhi”,<br> established : 1971,<br> 20 : 1000,<br> displayinfo : function() {<br> console.log(<code class="fy fz ga gb gc b">${school.name} was established <br> in ${school.established} at ${school.location}</code>);<br> }</p><p id="b9bc" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">}</p><p id="83d5" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">console.log(school.name);</p><p id="ba71" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">console.log(school.established);<br> Output:</p><p id="4637" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">Bracket Notation :<br> objectName[“memberName”]<br> let school = {<br> name : “Vivekanada School”,<br> location : “Delhi”,<br> established : 1995,<br> 20 : 1000,<br> displayinfo : function() {<br> document.write(<code class="fy fz ga gb gc b">${school.name} was established <br> in ${school.established} at ${school.location}</code>);<br> }<br> }</p><p id="917f" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">// Output : Vivekanada School<br> console.log(school[‘name’]);</p><p id="ce1d" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">// Output: 1000<br> console.log(school[‘20’]);<br> Output:<br> Unlike the dot notation, the bracket keyword works with any string combination, including, but not limited to multi-word strings.</p><p id="a8f3" class="ff fg bo fh b fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx cg df" data-selectable-paragraph="">For example:<br> somePerson.first name // invalid<br> somePerson[“first name”] // valid<br> Unlike the dot notation, the bracket notation can also contain names which are results of any expressions variables whose values are computed at run-time.<br> For instance :<br> let key = “first name” somePerson[key] = “Name Surname”<br> Similar operations are not possible while using the dot notation.</p></div>
+</div>
+
+</div>
+<div style="color:white;">Note: I do not own this content. Content inspired and embeded in this page from: https://medium.com/@gautam7109/objects-and-its-internal-representation-in-js-b7fd38fb1fee  .If you are the owner and if you are not pleased, feel free to contact me this content will be removed ASAP !!</div>
+</body>
+</html>
