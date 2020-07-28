@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var arr = ["GUVI", "I", "am", "geek"];
+function transformFirstAndLast(vals) {
+let first = 0;
+let last  = vals.length-1;
+var key;
+var value;
+for(i = first; i <= last; i++)
+{
+if(i == first)
+{
+key = vals[first];
+}
+else if(i == last)
+{
+value = vals[last];
+}
+}
+let obj = {[key] : value}
+console.log(obj);
+}
+transformFirstAndLast(arr);
+
+</script>
+</body>
+</html>

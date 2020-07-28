@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var arr = [["make", "Ford"], ["model", "Mustang"], ["year", 1964]];
+var new_obj = {};
+function fromListToObject(arr) {
+for(x in arr)
+{
+new_obj[arr[x][0]] = arr[x][1];
+}
+console.log(new_obj);
+}
+fromListToObject(arr);
+</script>
+</body>
+</html>

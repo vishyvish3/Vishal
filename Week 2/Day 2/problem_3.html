@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var object = {name: "ISRO", age: 35, role: "Scientist"};
+var new_arr = [];
+for(x in object)
+{
+let obj = [];
+obj.push(x);
+obj.push(object[x]);
+new_arr.push(obj);
+}
+console.log(new_arr);
+</script>
+</body>
+</html>

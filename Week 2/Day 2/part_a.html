@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var cat = {
+ name: "Fluffy",
+ activities: ["play", "eat cat food"],
+ catFriends: [
+ {
+ name: "bar",
+ activities: ["be grumpy", "eat bread omblet"],
+ weight: 8,
+ furcolor: "white"
+ }, 
+ {
+ name: "foo",
+ activities: ["sleep", "pre-sleep naps"],
+ weight: 3
+ }
+ ]
+}
+cat['height'] = 6;
+cat['weight'] = 9;
+console.log("Task 1 - Weight: "+cat['weight']+"; Height: "+cat['height']);
+
+//////////
+
+cat['name'] = "Fluffyy"
+console.log("Task 2 - Name: "+cat['name'] );
+/////
+
+console.log("Task 3 - fluffyy's friends activities");
+for(x in cat['catFriends'])
+{
+	for(y in  cat['catFriends'][x]['activities'])
+	{
+	console.log(cat['catFriends'][x]['activities'][y]);
+	}
+}
+/////
+
+console.log("Task 4 - fluffyy's friends activities");
+for(z in cat['catFriends'])
+{
+console.log(cat['catFriends'][z]['name']);
+}
+///
+console.log("Task 5 - fluffyy's friends total weight");
+let total_weight= 0;
+for(z in cat['catFriends'])
+{
+total_weight+= cat['catFriends'][z]['weight'];
+}
+console.log(total_weight);
+
+/////////
+console.log("Task 6 - Total activities");
+let activities_sum = 0;
+for(z in cat)
+{
+if(z == 'activities')
+{
+activities_sum += cat[z].length;
+}
+if(z == 'catFriends')
+{
+for(x in cat['catFriends'])
+{
+activities_sum += cat['catFriends'][x]['activities'].length;
+}
+}
+
+}
+console.log(activities_sum);
+////
+console.log("Task 7 - add two activities for the friends");
+cat['catFriends'][0]['activities'].push('plays','fights');
+cat['catFriends'][1]['activities'].push('swims','jumps');
+console.log(cat['catFriends'][0]['activities']);
+console.log(cat['catFriends'][1]['activities']);
+////
+console.log("Task 8 - change fur color");
+cat['catFriends'][0]['furcolor'] = 'brown'
+console.log(cat['catFriends'][0]['furcolor']);
+
+</script>
+</body>
+</html>

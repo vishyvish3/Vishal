@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>api error hadnling</title>
+</head>
+
+<body>
+<div id="result">
+</div>
+</body>
+<script>
+var request = new XMLHttpRequest();
+
+request.open("GET", "https://dog.ceo/api/breeds/list/all", true);
+
+request.onreadystatechange = function (oEvent) {  
+    if (request.readyState === 4) {  
+        if (request.status === 200) {  
+          console.log(request.responseText)  
+        } else {  
+           console.log("Error", request.statusText);  
+        }  
+    }  
+}; 
+
+request.send(null);  
+
+</script>
+</html>
