@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Js warmup problems</title>
+</head>
+
+<body>
+<div id="result">
+</div>
+</body>
+<script>
+function sumCSV(s)
+{
+var sum = 0;
+var res = s.split(",").map(val => +val);
+for(i=0; i < res.length; i++)
+{
+	sum += res[i];
+}
+console.log(sum);
+}
+
+sumCSV("1.5, 2.3, 3.1, 4, 5.5, 6, 7, 8, 9, 10.9");
+
+</script>
+</html>

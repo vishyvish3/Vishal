@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Js warmup problems</title>
+</head>
+
+<body>
+<div id="result">
+</div>
+</body>
+<script>
+
+function powersOfTwo(n){
+var pow = 1;
+res_arr = [];
+    for(i=0; i <= n; i++ )
+	{
+	if(i==0)
+	{
+	res_arr.push(1);
+	continue;
+	}
+	pow = pow * 2;
+	res_arr.push(pow);
+	}
+	console.log(res_arr.join(","));
+}
+
+powersOfTwo(0)
+powersOfTwo(1)
+powersOfTwo(2)
+</script>
+</html>
