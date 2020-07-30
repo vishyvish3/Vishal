@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Js warmup problems</title>
+</head>
+
+<body>
+<div id="result">
+</div>
+</body>
+<script>
+var arr = ['apple','mango','apple','orange'];
+
+(function (arr){
+let res = arr.filter((value,index) => arr.indexOf(value) == index);
+console.log(res);
+})(arr);
+
+</script>
+</html>

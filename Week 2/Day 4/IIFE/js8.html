@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Js warmup problems</title>
+</head>
+
+<body>
+<div id="result">
+</div>
+</body>
+<script>
+var arr = [1,2,3,4,5,6,7,8];
+var shift = 2;
+var i = 0;
+(function (arr, shift){
+while (i < 2)
+{
+arr.unshift(arr.pop());
+i++
+}
+console.log(arr);
+})(arr, shift);
+
+</script>
+</html>

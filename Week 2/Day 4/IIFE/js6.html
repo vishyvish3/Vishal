@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Js warmup problems</title>
+</head>
+
+<body>
+<div id="result">
+</div>
+</body>
+<script>
+var arr1 = [1,2,3];
+var arr2 = [6,7,8];
+var sorted_arr = arr1.concat(arr2).sort();
+(function median(values){
+  if(values.length ===0) return 0;
+
+  values.sort(function(a,b){
+    return a-b;
+  });
+
+  var half = Math.floor(values.length / 2);
+
+  if (values.length % 2)
+    return values[half];
+
+  var res = (values[half - 1] + values[half]) / 2.0;
+  console.log(res);
+})(sorted_arr);
+
+</script>
+</html>

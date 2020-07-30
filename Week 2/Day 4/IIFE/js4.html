@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Js warmup problems</title>
+</head>
+
+<body>
+<div id="result">
+</div>
+</body>
+<script>
+
+var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+(function (arr) {
+  
+  function isPrime(testNo){
+  
+    var result = false;
+    for(var n = testNo - 1; n > 1; n--){
+        result = (testNo % n === 0) + result;
+    }
+    
+    if(result === 0 && testNo > 1){
+      return true;
+    }return false;
+  }
+  
+
+  var newArr = []; 
+  
+  for(n=0; n<arr.length; n++){
+    if(isPrime(arr[n])){
+      newArr.push(arr[n]);
+    }
+  }
+  
+  console.log(newArr.join(" "));
+})(numbers);
+
+</script>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Js warmup problems</title>
+</head>
+
+<body>
+<div id="result">
+</div>
+</body>
+<script>
+function compute(val1, val2)
+{
+	var num1 = 10, num2 = 20;
+	var result = val2[val1](num1, num2);
+	return result;
+}
+
+function add(val1, val2)
+{
+return val1 + val2;
+}
+
+function sub(val1, val2)
+{
+return val1 - val2;
+}
+function mul(val1, val2)
+{
+return val1 * val2;
+}
+function div(val1, val2)
+{
+return val1 / val2;
+}
+
+
+operation = [add, sub, mul, div];
+
+res = compute(0, operation);
+console.log(res);
+
+res = compute(1, operation);
+console.log(res);
+
+res = compute(2, operation);
+console.log(res);
+
+res = compute(3, operation);
+console.log(res);
+</script>
+</html>
