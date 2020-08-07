@@ -1,0 +1,174 @@
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body
+{
+padding:0px;
+margin:0px;
+}
+.ic{
+   background: #E8ECEF;
+    padding: 4px;
+    position: relative;
+    color: #9E9E9E;
+    border: 1px solid #9E9E9E;
+    left: 5px;
+    width: 17px;
+    text-align: center;
+    height: 18px;
+}
+input,select{
+    height: 28px;
+	border:1px solid #9E9E9E;
+	width: 230px;
+}
+form{
+background:#E8ECEF;
+padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<form style="max-width:800px;margin:auto" autocomplete="off" onsubmit="submitfunction()" action="" method="post">
+  <div style="width:100%">
+	 <div style="float:left">
+	 <label > Full Name</label >
+	 </div>
+	 <div style="float:right">
+	 <span>
+	 
+	 <i class="fa fa-user icon ic"></i>
+		<input type="text" name="name" placeholder="Full Name" required>
+		<span>
+	 </div>
+	 <div style="clear: both;"></div>
+  </div>
+  <br>
+  <div style="width:100%">
+	 <div style="float:left">
+	 <label > Address Line 1</label >
+	 </div>
+	 <div style="float:right">
+	 <span>
+	 <i class="fa fa-address-book ic"></i>
+		<input type="text" name="addl1" placeholder="Address Line 1" required>
+		<span>
+	 </div>
+	 <div style="clear: both;"></div>
+  </div>
+  
+ <br>
+ <div style="width:100%">
+	 <div style="float:left">
+	 <label > Address Line 2</label >
+	 </div>
+	 <div style="float:right">
+	 <span>
+	 <i class="fa fa-address-book ic"></i>
+		<input type="text" name="addl2" placeholder="Address Line 1" required>
+		<span>
+	 </div>
+	 <div style="clear: both;"></div>
+  </div>
+<br>
+ <div style="width:100%">
+	 <div style="float:left">
+	 <label > City</label >
+	 </div>
+	 <div style="float:right">
+	 <span>
+	 <i class="fa fa-building ic"></i>
+		<input type="text" name="City" placeholder="City" required> 
+		<span>
+	 </div>
+	 <div style="clear: both;"></div>
+  </div>
+<br>
+<div style="width:100%">
+	 <div style="float:left">
+	 <label > State/Province/Region</label >
+	 </div>
+	 <div style="float:right">
+	 <span>
+	 <i class="fa fa-map-marker ic"></i>
+		<input type="text" name="state" placeholder="State/Province/Region" required>
+		<span>
+	 </div>
+	 <div style="clear: both;"></div>
+  </div>
+<br>
+<div style="width:100%">
+	 <div style="float:left">
+	 <label > Postal Code/ZIP</label >
+	 </div>
+	 <div style="float:right">
+	 <span>
+	 <i class="fa fa-envelope-open-o ic"></i>
+		<input type="text" name="pincd" placeholder="Postal Code/ZIP" required>
+		<span>
+	 </div>
+	 <div style="clear: both;"></div>
+  </div>
+<br>
+<div style="width:100%">
+	 <div style="float:left">
+	 <label > Country</label >
+	 </div>
+	 <div style="float:right">
+	 <span>
+	 <i class="fa fa-map-o ic"></i>
+		
+		<select name="cnty" required>
+		<option value="India">India</option>
+		<option value="China">China</option>
+		<option value="Japan">Japan</option>
+		<option value="Usa">Usa</option>
+		</select>
+		<span>
+	 </div>
+	 <div style="clear: both;"></div>
+  </div>
+<br>
+<div style="width:100%">
+	 <div style="float:left">
+	 <label > Email</label >
+	 </div>
+	 <div style="float:right">
+	 <span>
+	 <i class="fa fa-user icon ic"></i>
+		<input type="email" name="email" placeholder="Email" required>
+		<span>
+	 </div>
+	 <div style="clear: both;"></div>
+  </div>
+<br>
+<div style="width:100%">
+	 <div style="float:left">
+	 <label > Phone Number</label >
+	 </div>
+	 <div style="float:right">
+	 <span>
+	 <i class="fa fa-user icon ic"></i>
+		<input type="tel" name="pnumber" placeholder="Phone Number" required>
+		<span>
+	 </div>
+	 <div style="clear: both;"></div>
+  </div>
+<br>
+	<div style="text-align:center">
+	  
+	  <button type="submit"  >Submit</button>
+	  </div>
+</form>
+<script>
+function submitfunction(){
+alert("Thank you !!")
+}
+</script>
+</body>
+</html>
