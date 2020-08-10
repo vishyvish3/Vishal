@@ -1,0 +1,115 @@
+body{
+    padding: 0px;
+	margin:0px;
+    background-color:#ccc;
+}
+#container
+{
+	background-color:white;
+width:1000px;
+margin:auto
+}
+
+.rng
+{
+	    position: relative;
+    top: 5px;
+    left: 100px;
+}
+.skills11
+{
+	display:inline-block;
+	width:114px;
+}
+.head{
+    background-color:#565656;
+    height: 300px;
+   
+}
+
+.image-cropper{
+    padding: 40px 0 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.avatar {
+    border: orange ;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.dotted {
+    stroke-dasharray: 0.1, 12.5;
+    stroke-linecap: round;
+  }
+
+.author{
+background-color: #e9b83f;
+    position: absolute;
+    left: 36%;
+    top: 161px;
+    width: 370px;
+    padding-top: 41px;
+    padding-bottom: 41px;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.row {
+    display: flex;
+    border: grey ;
+  }
+  
+.column {
+    flex: 50%;
+    padding: 40px;
+}
+
+.text{
+    padding: 10px;
+    margin-bottom: 20px;
+    
+    font-size: 17px;
+    font-family: 'sans serif';
+}
+
+.heading
+{
+   font-size: 25px;
+}
+.heading label
+{
+	position: relative;
+    top: -22px;
+    left: 4px;
+}
+
+.border{
+    border-style:solid ;
+    width: 50px; height: 50px;
+}
+
+meter{
+    margin-right: 100px;
+}
+
+.experience{
+    margin-top: 40px;
+}
+
+.left .text{
+    margin-bottom: 20px; 
+}
+
+.work{
+    margin-bottom: 10px;
+}
+
+.profile-content, .skills{
+    margin:30px 0px;
+}

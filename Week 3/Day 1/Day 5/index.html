@@ -1,0 +1,366 @@
+<html>
+<head>
+<title>JavaScript resume </title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+
+
+<script>
+//create container
+let cont = document.createElement('div');
+cont.setAttribute('id','container');
+
+//create body obj
+let main = document.body;
+
+
+//header
+
+let header = document.createElement('div');
+header.setAttribute('class','head');
+
+
+//profile image
+let profileImage = document.createElement('img');
+profileImage.setAttribute('src',"https://rvishal.com/html/Day%202/resume/img/brin.PNG");
+profileImage.setAttribute('style', 'position:relative;top:-27px');
+
+//Image Section
+let imageHolder = document.createElement('div');
+imageHolder.setAttribute('class', 'image-cropper');
+
+imageHolder.append(profileImage)
+
+//name
+let authorName = document.createElement('div');
+authorName.setAttribute('class', 'author');
+authorName.innerText = 'BRIAN DUDEY'
+
+
+let authorNameSection = document.createElement('div');
+authorNameSection.setAttribute('style', 'background-color: white; height: 3px;')
+authorNameSection.setAttribute('class', 'image-cropper');
+
+authorNameSection.append(authorName);
+
+// append name and image to header
+header.append(imageHolder, authorNameSection);
+
+//append header to body
+cont.append(header);
+
+
+
+//info
+
+let aboutAuthor = document.createElement('div');
+aboutAuthor.setAttribute('class', 'image-cropper');
+aboutAuthor.setAttribute('style', ' height: 2px; padding: 20px 0 10px; font-weight:600');
+aboutAuthor.innerText = 'N. Damen Avenue, Chicago 99999 | 999-999-9999 | hello@Kickresume.com | www.Kickresume.com';
+
+cont.append(aboutAuthor);
+
+
+
+//main content
+
+let content = document.createElement('div');
+content.setAttribute('class','row');
+content.setAttribute('style','border-top:2px solid #ccc; margin-top:13px; padding-top:13px');
+
+//left content
+
+let leftSide = document.createElement('div');
+leftSide.setAttribute('class','column left');
+leftSide.setAttribute('style',' border-right: 1px solid #ccc;');
+
+
+//Profile
+
+let profile = document.createElement('div');
+profile.setAttribute('class','heading');
+profile.setAttribute('style', 'clear: bottom;')
+
+let image = document.createElement('img');
+image.setAttribute('src', 'https://rvishal.com/html/Day%202/resume/img/profile.PNG')
+image.setAttribute('style', 'width: 74px; height: 60px;');
+
+let profileLabel = document.createElement('label');
+profileLabel.setAttribute('for', 'profile');
+profileLabel.innerText = 'Profile';
+
+profile.append(image, profileLabel);
+leftSide.appendChild(profile);
+
+let profileContent = document.createElement('div');
+profileContent.setAttribute('class', 'text');
+profileContent.innerText = "Innovative optimized solution seeker. Excited to be at the deployment phase of my new career as a web developer. I am ambitious, adventurous, assiduous, animated, and an a lliteration advocate." ;
+
+leftSide.appendChild(profileContent);
+
+// Skills
+
+let skill = document.createElement('div');
+skill.setAttribute('class','heading');
+
+let skillImage = document.createElement('img');
+skillImage.setAttribute('id', 'profile');
+skillImage.setAttribute('src', 'https://rvishal.com/html/Day%202/resume/img/skill.PNG')
+skillImage.setAttribute('style', 'width:70px');
+
+let skillLabel = document.createElement('label');
+skillLabel.setAttribute('for', 'profile');
+skillLabel.innerText = 'Skills';
+
+skill.append(skillImage, skillLabel);
+leftSide.appendChild(skill);
+
+let skillContent = document.createElement('div');
+skillContent.setAttribute('class', 'text');
+
+cLabel= document.createElement('label');
+cLabel.setAttribute('class', 'skills11');
+cLabel.innerHTML = 'JavaScript'
+
+image = document.createElement('img');
+image.setAttribute('src', 'https://rvishal.com/html/Day%202/resume/img/rng.PNG')
+image.setAttribute('class','rng');
+brk = document.createElement('br');
+skillContent.append(cLabel, image, brk )
+leftSide.append(skillContent);
+
+
+jsLabel= document.createElement('label');
+jsLabel.setAttribute('class', 'skills11');
+jsLabel.innerHTML = 'CSS'
+image = document.createElement('img');
+image.setAttribute('src', 'https://rvishal.com/html/Day%202/resume/img/rng.PNG');
+image.setAttribute('class','rng');
+brk = document.createElement('br');
+skillContent.append(jsLabel, image, brk)
+leftSide.append(skillContent);
+
+
+htmlLabel= document.createElement('label');
+htmlLabel.setAttribute('class', 'skills11');
+htmlLabel.innerHTML = 'React'
+image = document.createElement('img');
+image.setAttribute('src', 'https://rvishal.com/html/Day%202/resume/img/rng.PNG');
+image.setAttribute('class','rng');
+brk = document.createElement('br');
+skillContent.append(htmlLabel, image, brk)
+leftSide.append(skillContent);
+
+htmlLabel= document.createElement('label');
+htmlLabel.setAttribute('class', 'skills11');
+htmlLabel.innerHTML = 'Redux'
+image = document.createElement('img');
+image.setAttribute('src', 'https://rvishal.com/html/Day%202/resume/img/rng.PNG');
+image.setAttribute('class','rng');
+brk = document.createElement('br');
+skillContent.append(htmlLabel, image, brk)
+leftSide.append(skillContent);
+
+htmlLabel= document.createElement('label');
+htmlLabel.setAttribute('class', 'skills11');
+htmlLabel.innerHTML = 'Mongo'
+image = document.createElement('img');
+image.setAttribute('src', 'https://rvishal.com/html/Day%202/resume/img/rng.PNG');
+image.setAttribute('class','rng');
+brk = document.createElement('br');
+skillContent.append(htmlLabel, image, brk)
+leftSide.append(skillContent);
+
+
+htmlLabel= document.createElement('label');
+htmlLabel.setAttribute('class', 'skills11');
+htmlLabel.innerHTML = 'Deployment'
+image = document.createElement('img');
+image.setAttribute('src', 'https://rvishal.com/html/Day%202/resume/img/rng.PNG');
+image.setAttribute('class','rng');
+brk = document.createElement('br');
+skillContent.append(htmlLabel, image, brk)
+leftSide.append(skillContent);
+
+// work col-1
+
+let work1 = document.createElement('div');
+work1.setAttribute('class','heading');
+
+let work1Image = document.createElement('img');
+work1Image.setAttribute('id', 'work');
+work1Image.setAttribute('src', 'https://rvishal.com/html/Day%202/resume/img/work.PNG')
+work1Image.setAttribute('style', 'width:70px');
+
+let work1Label = document.createElement('label');
+work1Label.setAttribute('for', 'work');
+work1Label.innerText = 'Work Experience';
+
+work1.append(work1Image, work1Label);
+leftSide.appendChild(work1);
+
+let workContent = document.createElement('div');
+workContent.setAttribute('class', 'text');
+workContent.innerText = "";
+
+let title = document.createElement('div');
+title.setAttribute('style', 'float:left');
+let bold = document.createElement('b');
+bold.innerText = 'Event Manger'
+
+title.append(bold);
+
+let date = document.createElement('div');
+date.setAttribute('style', 'float:right');
+date.innerText = '03/1014 - 02/2017';
+workContent.append(title, date);
+
+let experience = document.createElement('div');
+experience.setAttribute('class', 'experience')
+
+let unorderdList = document.createElement('ul');
+let list1 = document.createElement('li');
+list1.innerText = "Lead and execute all phases of event planning and production spanning committee recruitment, training, vendor relationships and on-site facilitation."
+
+let list2 = document.createElement('li');
+list2.innerText = "Brought new business to the organization through relentless networking and stewardship which helped the company win the bid for the State Department Summit on the Middle East and, the companies largest civic event to date, the United State of Women";
+
+let list3 = document.createElement('li');
+list3.innerText = "Exercise fiscal control over budget creation, tracking and reporting. Collaborate with employees at all organization levels to advance cohesive operations."
+
+unorderdList.append(list1, list2, list3);
+experience.append(unorderdList);
+workContent.append(experience)
+
+
+leftSide.appendChild(workContent)
+
+
+//right content
+
+let rightSide = document.createElement('div');
+rightSide.setAttribute('class','column');
+
+// work 2
+
+let work2 = document.createElement('div');
+work2.setAttribute('class','heading');
+
+let work2Image = document.createElement('img');
+work2Image.setAttribute('id', 'work');
+work2Image.setAttribute('src', 'https://rvishal.com/html/Day%202/resume/img/work.PNG')
+work2Image.setAttribute('style', 'width:70px');
+
+let work2Label = document.createElement('label');
+work2Label.setAttribute('for', 'work');
+work2Label.innerText = 'Work Experience';
+
+work2.append(work2Image, work2Label);
+rightSide.appendChild(work2);
+
+let workContent2 = document.createElement('div');
+workContent2.setAttribute('class', 'text work');
+workContent2.innerText = "";
+
+let title2 = document.createElement('div');
+title2.setAttribute('style', 'float:left');
+let bold1 = document.createElement('b');
+bold1.innerText = 'Community Relations Manager'
+
+title2.append(bold1);
+
+let date2 = document.createElement('div');
+date2.setAttribute('style', 'float:right');
+date2.innerText = '03/1014 - 02/2017';
+workContent2.append(title2, date2);
+
+let experience2 = document.createElement('div');
+experience2.setAttribute('class', 'experience')
+
+let unorderdList2 = document.createElement('ul');
+let list21 = document.createElement('li');
+list21.innerText = "Lead and execute all phases of event planning and production spanning committee recruitment, training, vendor relationships and on-site facilitation."
+
+let list22 = document.createElement('li');
+list22.innerText = "Brought new business to the organization through relentless networking and stewardship which helped the company win the bid for the State Department Summit on the Middle East and, the companies largest civic event to date, the United State of Women"
+
+let list23 = document.createElement('li');
+list23.innerText = "Exercise fiscal control over budget creation, tracking and reporting. Collaborate with employees at all organization levels to advance cohesive operations."
+
+unorderdList2.append(list21, list22, list23);
+experience2.append(unorderdList2);
+workContent2.append(experience2)
+
+rightSide.appendChild(workContent2)
+
+
+// edu
+
+
+let Ed = document.createElement('div');
+Ed.setAttribute('class','heading');
+
+let EdImage = document.createElement('img');
+EdImage.setAttribute('id', 'work');
+EdImage.setAttribute('src', 'https://rvishal.com/html/Day%202/resume/img/edu.PNG')
+EdImage.setAttribute('style', 'width:70px;');
+
+let EdLabel = document.createElement('label');
+EdLabel.setAttribute('for', 'education');
+EdLabel.innerText = 'Education';
+
+Ed.append(EdImage, EdLabel);
+rightSide.appendChild(Ed);
+
+let EdContent = document.createElement('div');
+EdContent.setAttribute('class', 'text');
+EdContent.innerText = "";
+
+let title3 = document.createElement('div');
+title3.setAttribute('style', 'float:left');
+let bold2 = document.createElement('b');
+bold2.innerText = 'Computer Science Engineering'
+
+title3.append(bold2);
+
+let date3 = document.createElement('div');
+date3.setAttribute('style', 'float:right');
+date3.innerText = '03/1014 - 02/2017';
+EdContent.append(title3, date3);
+
+let education = document.createElement('div');
+education.setAttribute('class', 'experience')
+
+let unorderdListEd = document.createElement('ul');
+let list1Ed = document.createElement('li');
+list1Ed.innerText = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+
+let list2Ed = document.createElement('li');
+list2Ed.innerText = "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+
+let list3Ed = document.createElement('li');
+list3Ed.innerText = "The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."
+
+unorderdListEd.append(list1Ed, list2Ed, list3Ed);
+education.append(unorderdListEd);
+EdContent.append(education)
+
+rightSide.appendChild(EdContent)
+
+content.append(leftSide, rightSide);
+
+//appned the content to main container
+cont.append(content);
+
+//append main container to body
+main.append(cont);
+
+
+</script>
+</body>
+</html>
