@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+  <title>age calculator </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style type="text/css">
+.container
+{
+max-width:500px!important;
+}
+#fromdate
+{
+width:60%;
+}
+.btn
+{
+margin-top:10px;
+}
+h1
+{
+margin-top:40px;
+}
+</style>
+</head>
+<body>
+
+<script>
+function calculate()
+{
+
+
+var fromdate = new Date($("#fromdate").val()); 
+var todate = new Date();
+var curtmonth = todate.getMonth(); 
+var bdaymonth = fromdate.getMonth(); 
+var Difference_In_Time = todate.getTime() - fromdate.getTime();
+var days = Difference_In_Time / (1000 * 3600 * 24); 
+var min = days*1440
+var sec = days*86400
+//console.log(" current month :"+curtmonth)
+//console.log(" dateof birth month :"+bdaymonth)
+var month = curtmonth - bdaymonth
+var monthss = monthDiff(fromdate, todate) 
+//console.log("totalmonth: "+monthDiff(fromdate, todate))
+//console.log("get month:"+ month)
+var year = monthss*0.0833334
+//alert(days)
+document.getElementById("year").innerHTML ="Years: "+year.toFixed(0) ;
+document.getElementById("months").innerHTML ="Months: "+month.toFixed(0) ;
+document.getElementById("days").innerHTML ="Days: "+days.toFixed(0) ;
+document.getElementById("mins").innerHTML ="Minutes: "+min.toFixed(0) ;
+document.getElementById("sec").innerHTML ="Secomds: "+sec.toFixed(0) ;
+}
+
+function monthDiff(d1, d2) {
+    var months;
+    months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    months -= d1.getMonth();
+    months += d2.getMonth();
+    return months <= 0 ? 0 : months;
+}
+
+//create body obj
+let main = document.body;
+
+//create container
+let cont = document.createElement('div');
+cont.setAttribute('class','container');
+
+//create row
+let row = document.createElement('div');
+row.setAttribute('class','row');
+
+let heading = document.createElement('h1');
+heading.innerHTML = 'Age calculator';
+
+//create col
+let col1 = document.createElement('div');
+col1.setAttribute('class','col-md-12');
+
+let txtbox = document.createElement('input');
+txtbox.setAttribute('class','form-control form-control-sm');
+txtbox.setAttribute('type','date');
+txtbox.setAttribute('id','fromdate');
+txtbox.setAttribute('name','fromdate');
+
+col1.append(txtbox);
+
+let btn = document.createElement('button');
+btn.setAttribute('class','btn btn-success');
+btn.setAttribute('onclick','calculate()');
+btn.innerHTML = 'calculate';
+
+
+let col2 = document.createElement('div');
+col2.setAttribute('class','col-md-12');
+col2.append(btn);
+
+
+let year = document.createElement('div');
+year.setAttribute('class','col-md-12');
+year.setAttribute('id','year');
+
+
+let month = document.createElement('div');
+month.setAttribute('class','col-md-12');
+month.setAttribute('id','months');
+
+
+let days = document.createElement('div');
+days.setAttribute('class','col-md-12');
+days.setAttribute('id','days');
+
+
+let mins = document.createElement('div');
+mins.setAttribute('class','col-md-12');
+mins.setAttribute('id','mins');
+
+let sec = document.createElement('div');
+sec.setAttribute('class','col-md-12');
+sec.setAttribute('id','sec');
+
+row.append(col1,col2, year, month, days, mins, sec);
+
+let content ="test";
+//appned the content to main container
+cont.append(heading,row);
+
+//append main container to body
+main.append(cont)
+
+
+</script>
+  
+
+</body>
+</html>

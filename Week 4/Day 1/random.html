@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+  <title>Random number generator </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style type="text/css">
+.container
+{
+max-width:520px!important;
+}
+h1
+{
+margin-top:50px;
+}
+.btn
+{
+margin-top:10px;
+}
+</style>
+</head>
+<body>
+
+<script>
+
+
+
+
+//create body obj
+let main = document.body;
+
+//create container
+let cont = document.createElement('div');
+cont.setAttribute('class','container');
+
+//create row
+let row = document.createElement('div');
+row.setAttribute('class','row');
+
+let heading = document.createElement('h1');
+heading.innerHTML = 'Random number generator';
+
+//create col
+let col1 = document.createElement('div');
+col1.setAttribute('class','col-md-12');
+
+let txtbox = document.createElement('input');
+txtbox.setAttribute('class','random');
+txtbox.setAttribute('type','text');
+txtbox.setAttribute('id','random');
+txtbox.setAttribute('name','random');
+
+col1.append(txtbox);
+
+let btn = document.createElement('button');
+btn.setAttribute('class','btn btn-success');
+btn.setAttribute('onclick','generate([])');
+btn.innerHTML = 'Generate';
+
+
+let col2 = document.createElement('div');
+col2.setAttribute('class','col-md-12');
+col2.append(btn);
+
+
+let rand = document.createElement('div');
+rand.setAttribute('class','col-md-12');
+rand.setAttribute('id','rand');
+
+row.append(col1,col2, rand);
+
+let content ="test";
+//appned the content to main container
+cont.append(heading,row);
+
+//append main container to body
+main.append(cont)
+
+function generate(randomNumber){
+    if(randomNumber.length == 8){
+        document.getElementById("random").value = randomNumber.join('');
+        return
+    }
+    let digit = (Math.floor(Math.random() * 10)) % 9;
+    if(!randomNumber.includes(digit) && digit!=0) randomNumber.push(digit);
+    generate(randomNumber);
+}
+
+
+</script>
+  
+
+</body>
+</html>
+
+
+
+
