@@ -1,0 +1,450 @@
+<html lang="en">
+<head>
+  <title>Form & table - js dom </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style type="text/css">
+
+h1
+{
+margin-top:30px;
+margin-bottom:20px;
+}
+.btn
+{
+margin-top:10px;
+}
+tr,td
+{
+border:1px solid #ccc;
+}
+td
+{
+padding:10px;
+}
+.foods label
+{
+margin-left:5px;
+}
+.container
+{
+max-width: 700px;
+background-color: #cccccc36;
+padding-right: 5%;
+padding-bottom: 40px;
+}
+.change
+{
+background-color:white!important;
+max-width:880px!important
+}
+</style>
+</head>
+<body>
+
+<script>
+
+
+
+
+//create body obj
+let main = document.body;
+
+//create container
+let cont = document.createElement('div');
+cont.setAttribute('class','container');
+
+//create row
+let row = document.createElement('div');
+row.setAttribute('class','row');
+
+let heading = document.createElement('h1');
+heading.setAttribute('style','text-align:center');
+heading.innerHTML = 'Register Form';
+
+//create col-12
+let form_container = document.createElement('div');
+form_container.setAttribute('class','col-md-12');
+
+
+//form tag open			
+let form_group1 = document.createElement('div');
+form_group1.setAttribute('class','form-group');
+
+let lbl = document.createElement('label');	
+lbl.setAttribute('class','col-md-3 control-label');
+lbl.innerHTML = 'First Name';
+
+let txtbox = document.createElement('input');
+txtbox.setAttribute('type','text');
+txtbox.setAttribute('name','fname');
+txtbox.setAttribute('id','fname');
+txtbox.setAttribute('placeholder','first name');
+txtbox.setAttribute('class','form-control');
+txtbox.setAttribute('required','');
+
+let col9 = document.createElement('div');
+col9.setAttribute('class','col-md-9');
+col9.append(txtbox);
+
+let form1 = document.createElement('form');
+form1.setAttribute('class','form-horizontal');
+form1.setAttribute('action',' ');
+form1.setAttribute('method','post');
+
+form_group1.append(lbl,col9);		
+//form tag close
+
+
+//form tag open			
+let form_group2 = document.createElement('div');
+form_group2.setAttribute('class','form-group');
+
+let lbl2 = document.createElement('label');	
+lbl2.setAttribute('class','col-md-3 control-label');
+lbl2.innerHTML = 'Last Name';
+
+let txtbox2 = document.createElement('input');
+txtbox2.setAttribute('type','text');
+txtbox2.setAttribute('name','lname');
+txtbox2.setAttribute('id','lname');
+txtbox2.setAttribute('placeholder','last name');
+txtbox2.setAttribute('class','form-control');
+txtbox2.setAttribute('required','');
+
+let col92 = document.createElement('div');
+col92.setAttribute('class','col-md-9');
+col92.append(txtbox2);
+
+
+
+form_group2.append(lbl2,col92);		
+//form tag close
+
+//form tag open			
+let form_group3 = document.createElement('div');
+form_group3.setAttribute('class','form-group');
+
+let lbl3 = document.createElement('label');	
+lbl3.setAttribute('class','col-md-3 control-label');
+lbl3.innerHTML = 'Address';
+
+let txtbox3 = document.createElement('textarea');
+txtbox3.setAttribute('id','address');
+txtbox3.setAttribute('placeholder','address');
+txtbox3.setAttribute('rows','5');
+txtbox3.setAttribute('class','form-control');
+txtbox3.setAttribute('required','');
+
+let col93 = document.createElement('div');
+col93.setAttribute('class','col-md-9');
+col93.append(txtbox3);
+
+
+
+form_group3.append(lbl3,col93);		
+//form tag close
+
+
+//form tag open			
+let form_group4 = document.createElement('div');
+form_group4.setAttribute('class','form-group');
+
+let lbl4 = document.createElement('label');	
+lbl4.setAttribute('class','col-md-3 control-label');
+lbl4.innerHTML = 'Gender';
+
+
+let select = document.createElement('select');
+select.setAttribute('name','gender');
+select.setAttribute('id','gender');
+select.setAttribute('class','form-control');
+select.setAttribute('required','');
+
+let list1 = document.createElement('option');
+list1.setAttribute('value','');
+list1.innerHTML = 'Select gender'
+
+let list2 = document.createElement('option');
+list2.setAttribute('value','male');
+list2.innerHTML = 'Male'
+
+let list3 = document.createElement('option');
+list3.setAttribute('value','female');
+list3.innerHTML = 'Female'
+
+let list4 = document.createElement('option');
+list4.setAttribute('value','other');
+list4.innerHTML = 'Other'
+
+select.append(list1, list2, list3, list4)
+
+
+let col94 = document.createElement('div');
+col94.setAttribute('class','col-md-9');
+col94.append(select);
+
+
+form_group4.append(lbl4,col94);		
+//form tag close
+
+
+//form tag open			
+let form_group5 = document.createElement('div');
+form_group5.setAttribute('class','form-group');
+
+let lbl5 = document.createElement('label');	
+lbl5.setAttribute('class','col-md-3 control-label');
+lbl5.innerHTML = 'Food';
+
+
+let food = document.createElement('div');
+food.setAttribute('class','foods');
+
+
+let food1 = document.createElement('input');
+food1.setAttribute('type','checkbox');
+food1.setAttribute('value','biryani');
+food1.innerHTML = 'Biryani'
+
+let food2 = document.createElement('input');
+food2.setAttribute('type','checkbox');
+food2.setAttribute('value','Dosa');
+food2.innerHTML = 'Dosa';
+
+
+
+food.innerHTML = '<input type="checkbox" id="foodlist1" name="foodlist" value="Biryani"> <label for="foodlist1"> Biryani</label><br><input type="checkbox" id="foodlist2" name="foodlist" value="Noodles"><label for="foodlist2">Noodles</label><br><input type="checkbox" id="foodlist3" name="foodlist" value="Fried Rice"><label for="foodlist3"> Fried Rice</label><br><input type="checkbox" id="foodlist4" name="foodlist" value="Burger"><label for="foodlist4"> Burger</label><br><input type="checkbox" id="foodlist5" name="foodlist" value="Vada"><label for="foodlist5"> Vada</label><br>';
+
+
+let col95 = document.createElement('div');
+col95.setAttribute('class','col-md-9');
+col95.append(food);
+
+
+
+form_group5.append(lbl5,col95);		
+//form tag close
+
+
+
+//form tag open - state	
+let form_group6 = document.createElement('div');
+form_group6.setAttribute('class','form-group');
+
+let lbl6 = document.createElement('label');	
+lbl6.setAttribute('class','col-md-3 control-label');
+lbl6.innerHTML = 'State';
+
+let txtbox6 = document.createElement('input');
+txtbox6.setAttribute('type','text');
+txtbox6.setAttribute('name','state');
+txtbox6.setAttribute('id','state');
+txtbox6.setAttribute('placeholder','state');
+txtbox6.setAttribute('class','form-control');
+txtbox6.setAttribute('required','');
+
+let col96 = document.createElement('div');
+col96.setAttribute('class','col-md-9');
+col96.append(txtbox6);
+
+
+
+form_group6.append(lbl6,col96);		
+//form tag close
+
+//form tag open - country
+let form_group7 = document.createElement('div');
+form_group7.setAttribute('class','form-group');
+
+let lbl7 = document.createElement('label');	
+lbl7.setAttribute('class','col-md-3 control-label');
+lbl7.innerHTML = 'Country';
+
+let txtbox7 = document.createElement('input');
+txtbox7.setAttribute('type','text');
+txtbox7.setAttribute('name','country');
+txtbox7.setAttribute('id','country');
+txtbox7.setAttribute('placeholder','country');
+txtbox7.setAttribute('class','form-control');
+txtbox7.setAttribute('required','');
+
+let col97 = document.createElement('div');
+col97.setAttribute('class','col-md-9');
+col97.append(txtbox7);
+
+
+
+form_group7.append(lbl7,col97);		
+//form tag close
+
+
+form1.append(form_group1, form_group2, form_group3, form_group4, form_group5, form_group6, form_group7);
+form_container.append(form1);
+
+let btn = document.createElement('button');
+btn.setAttribute('class','btn btn-success pull-right');
+btn.setAttribute('onclick','generate()');
+btn.innerHTML = 'Submit';
+
+
+let btnrow = document.createElement('div');
+btnrow.setAttribute('class','col-md-12');
+btnrow.append(btn);
+
+row.append(form_container,btnrow);
+
+
+//appned the content to main container
+cont.append(heading,row);
+
+//append main container to body
+main.append(cont)
+
+function generate(){
+  let table = document.createElement('table');
+  table.setAttribute('class','table table-bordered');
+  
+  let row1 = document.createElement('tr');
+  let r1c1 = document.createElement('td');
+  r1c1.innerHTML = 'First name';
+  row1.appendChild(r1c1);
+  
+  let r1c2 = document.createElement('td');
+  r1c2.innerHTML = 'Last name';
+  row1.appendChild(r1c2);
+  
+  let r1c3 = document.createElement('td');
+  r1c3.innerHTML = 'Address';
+  row1.appendChild(r1c3);
+  
+    let r1c4 = document.createElement('td');
+  r1c4.innerHTML = 'Gender';
+  row1.appendChild(r1c4);
+  
+    let r1c5 = document.createElement('td');
+  r1c5.innerHTML = 'Favourite food';
+  row1.appendChild(r1c5);
+  
+    let r1c6 = document.createElement('td');
+  r1c6.innerHTML = 'State';
+  row1.appendChild(r1c6);
+  
+   let r1c7 = document.createElement('td');
+  r1c7.innerHTML = 'Country';
+  row1.appendChild(r1c7);
+   table.appendChild(row1);
+//   
+  let row2 = document.createElement('tr');
+  let r2c1 = document.createElement('td');
+  var first_name =  document.getElementById("fname").value;
+ if(!first_name)
+  {
+  alert("Enter first name");
+  return false;
+  }
+ r2c1.innerHTML = first_name;
+  row2.appendChild(r2c1);
+  table.appendChild(row2);
+//  
+   
+   let r2c2 = document.createElement('td');
+    var last_name =  document.getElementById("lname").value;
+    if(!last_name)
+  {
+  alert("Enter last name");
+  return false;
+  }
+  r2c2.innerHTML = last_name;
+  row2.appendChild(r2c2);
+//
+
+  let r2c3 = document.createElement('td');
+  var addr = document.getElementById("address").value;
+  if(!addr)
+  {
+  alert("Enter your address");
+  return false;
+  }
+  r2c3.innerHTML = addr;
+  row2.appendChild(r2c3);
+//
+  
+  let r2c4 = document.createElement('td');
+  var gend = document.getElementById("gender").value;
+  if(!gend)
+  {
+  alert("Please select gender");
+  return false;
+  }
+  r2c4.innerHTML = gend;
+  row2.appendChild(r2c4);
+  
+  var checkboxes = document.getElementsByName("foodlist");  
+  var check_arr =[]; 
+    for(var i = 0; i < checkboxes.length; i++)  
+    {  
+        if(checkboxes[i].checked)  
+          {
+		  check_arr.push(checkboxes[i].value);
+		  }
+    }
+	if(check_arr.length < 2)
+	{
+	alert('please select atleast two favourite food items');
+	return false;
+	}
+	
+  
+  let r2c5 = document.createElement('td');
+  r2c5.innerHTML = check_arr;
+  row2.appendChild(r2c5);
+  
+  
+  let r2c6 = document.createElement('td');
+  var state = document.getElementById("state").value;
+  if(!state)
+  {
+  alert("Enter your state");
+  return false;
+  }
+  r2c6.innerHTML = state;
+  row2.appendChild(r2c6);
+  
+  let r2c7 = document.createElement('td');
+  var country = document.getElementById("country").value;
+  if(!country)
+  {
+  alert("Enter your country");
+  return false;
+  }
+  r2c7.innerHTML = country;
+  row2.appendChild(r2c7);
+  
+  
+  table.appendChild(row2);
+  cont.append(table);
+  heading.innerText = 'User information'
+  row.setAttribute('style','display:none;');
+  cont.classList.add("change")
+  
+}
+
+
+</script>
+  
+
+</body>
+</html>
+
+
+
+
