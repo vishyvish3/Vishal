@@ -127,8 +127,6 @@ function pageButtons(pages) {
         maxRight = pages
     }
     
-    
-
     for (var page = maxLeft; page <= maxRight; page++) {
     	wrapper.innerHTML += `<button value=${page} class="page btn btn-sm btn-success">${page}</button>`
     }
@@ -140,12 +138,12 @@ function pageButtons(pages) {
     if (state.page != pages) {
         wrapper.innerHTML += `<button value=${pages} class="page btn btn-sm btn-success">Last &#187;</button>`
     }
-
-    $('.page').on('click', function() {
-        //$('#table-body').empty();
-		var e = document.querySelector("#table-body"); 
+	
+	
+[...document.querySelectorAll('.page')].forEach(function(item) {
+  item.addEventListener('click', function() {
         
-        //e.firstElementChild can be used. 
+		var e = document.querySelector("#table-body"); 
         var child = e.lastElementChild;  
         while (child) { 
             e.removeChild(child); 
@@ -155,16 +153,17 @@ function pageButtons(pages) {
         state.page = Number($(this).val())
 
         buildTable()
-    })
+    });
+   });
 
 }
 
 
 function buildTable() {
-    //var table = $('#table-body');
+    
 var table = document.querySelector("#table-body"); 
-    var data = pagination(state.querySet, state.page, state.rows)
-    var myList = data.querySet
+    var data = pagination(state.querySet, state.page, state.rows);
+    var myList = data.querySet;
 
     for (var i = 1 in myList) {
        
