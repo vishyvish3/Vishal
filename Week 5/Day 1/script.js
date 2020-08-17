@@ -1,19 +1,3 @@
-<html lang="en">
-<head>
-<title>Indepence day counter - callback hell </title>
-
-<style type="text/css">
-#message-div
-{
-text-align:center;
-font-size:30px;
-color:green;
-}
-</style>
-</head>
-<body>
-<div id="message-div"></div>
-<script>
 var msg_div = document.getElementById('message-div');
 setTimeout(function(){
                   msg_div.innerText='10';
@@ -49,11 +33,3 @@ setTimeout(function(){
                    },1000)
               },1000)
             })
-</script>
-  
-</body>
-</html>
-
-
-
-
