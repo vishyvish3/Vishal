@@ -21,7 +21,7 @@ async function processdata()
 	  for(x in res)
 	{
 		  var col = document.createElement("div");
-		  col.setAttribute("class","col-md-4");
+		  col.setAttribute("class","col-lg-4 col-sm-12");
 		  
 		  var card = document.createElement("div");
 		  card.setAttribute("class","card");
