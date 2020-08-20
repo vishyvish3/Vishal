@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+  <title>index</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+body {
+    background-color: #ecf5ff !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btn
+{
+margin-top: 12px;
+background-color: white;
+color: #56a5eb;
+border: 1px solid white;
+width: 200px;
+padding: 17px 20px;
+font-size: 18px;
+}
+input
+{
+width: 200px;
+border: none;
+box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+height: 61px;
+padding-left:10px
+}
+</style>
+  
+</head>
+<body>
+
+
+<div style="margin-top:5%;" class="container">
+<div  class="row">
+<div style="text-align:center" class="col-md-12">
+<h2 id="score">Score</h2>
+<div><input name="username" id="username" placeholder="Enter name.." type="text" /></div>
+<div><a id="save" href="#" onClick="savescore()" class="btn btn-light" >Save</a></div>
+<div><a href="game.html" class="btn btn-light">Play Again</a></div>
+<div><a href="index.html" class="btn btn-light" >Go Home</a></div>
+</div>
+</div>
+</div>
+<script>
+document.getElementById("score").innerHTML = localStorage.getItem('Score');
+
+if(JSON.parse(localStorage.getItem('highestlist')))
+{
+var highestlist = JSON.parse(localStorage.getItem('highestlist')) ;
+}
+else
+{
+var highestlist = [];
+}
+
+function savescore()
+ {
+	var uname = document.getElementById("username").value;
+	if(!uname)
+	{
+	alert("Enter name");
+	return false;
+	}
+    var user = {
+	    name: uname,
+        score: localStorage.getItem('Score'),
+        
+    };
+    highestlist.push(user);
+    highestlist.sort((val1, val2) => val2.score - val1.score);
+    highestlist.splice(5);
+
+    localStorage.setItem('highestlist', JSON.stringify(highestlist));
+    //alert(localStorage.getItem('highestlist'));
+	window.location.assign('index.html');
+};
+</script>
+</body>
+</html>
