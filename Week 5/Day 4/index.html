@@ -12,20 +12,29 @@ body{
 background-color:#ecf5ff!important;
 font-family:Arial, Helvetica, sans-serif;
 }
-.h1{
-font-size: 5.4rem;
-color: #56a5eb;
-margin-bottom: 5rem;
+.container
+{
+text-align:center;
 }
-.newbtn{
-    font-size: 1.8rem;
-    padding: 1rem 35px;
-    text-align: center;
-    border: 0.1rem solid #56a5eb;
-    margin-bottom: 1rem;
-    text-decoration: none;
+.heading{
+    font-size: 4.4rem;
     color: #56a5eb;
-    background-color: white;
+    margin-bottom: 3rem;
+    margin-top: 5rem;
+}
+
+.newbtn{
+font-size: 1.8rem;
+padding: 1rem 35px;
+text-align: center;
+border: 0.1rem solid #42A3B9;
+margin-bottom: 1rem;
+text-decoration: none;
+color: white;
+background-color: white;
+width: 209px;
+background-color: #42A3B9;
+display:inline-block;
 }
 
 .btn:hover {
@@ -50,13 +59,35 @@ text-decoration:none!important;
 <body>
 
 
-  
-<div class="container text-center" style='padding-top: 10%;'>
-  <h1 class='h1'>Quick Quiz</h1>
-  <a class='newbtn' href='game.html' style="width:170px!important">Play</a>
+<script>
+//create dom elements
+var document_body = document.body;
 
-  <a class='newbtn' href='highscores.html'>High Scores</a>
-</div>
+//create main container
+var container = document.createElement("div");
+container.setAttribute("class","container");
 
+var brk = document.createElement("br");
+
+var heading = document.createElement("h1");
+heading.setAttribute("class","heading");
+heading.innerHTML = "Quick Quiz";
+
+var play = document.createElement("a");
+play.setAttribute("id","play");
+play.setAttribute("class","newbtn");
+play.setAttribute("href","game.html")
+play.innerHTML = "Play"
+
+var highScores = document.createElement("a");
+highScores.setAttribute("id","highScores");
+highScores.setAttribute("class","newbtn");
+highScores.setAttribute("href","highscores.html")
+highScores.innerHTML = "High Scores"
+
+//append elements to the container
+container.append(heading, brk, play, brk, highScores);
+document_body.append(container);
+</script>
 </body>
 </html>
