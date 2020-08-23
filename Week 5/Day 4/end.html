@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-  <title>index</title>
+  <title>Score</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -21,6 +21,11 @@ width: 200px;
 padding: 17px 20px;
 font-size: 18px;
 }
+.container
+{
+text-align:center;
+margin-top:50px
+}
 input
 {
 width: 200px;
@@ -29,25 +34,80 @@ box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
 height: 61px;
 padding-left:10px
 }
+
 </style>
   
 </head>
 <body>
 
 
-<div style="margin-top:5%;" class="container">
-<div  class="row">
-<div style="text-align:center" class="col-md-12">
-<h2 id="score">Score</h2>
-<div><input name="username" id="username" placeholder="Enter name.." type="text" /></div>
-<div><a id="save" href="#" onClick="savescore()" class="btn btn-light" >Save</a></div>
-<div><a href="game.html" class="btn btn-light">Play Again</a></div>
-<div><a href="index.html" class="btn btn-light" >Go Home</a></div>
-</div>
-</div>
-</div>
 <script>
-document.getElementById("score").innerHTML = localStorage.getItem('Score');
+
+//create dom elements
+var document_body = document.body;
+
+//create main container
+var container = document.createElement("div");
+container.setAttribute("class","container");
+
+//create row
+var row = document.createElement("div");
+row.setAttribute("class","row");
+
+//create col12
+var col12 = document.createElement("div");
+col12.setAttribute("class","col-md-12");
+
+var h2 = document.createElement("h2");
+h2.setAttribute("class","score");
+h2.innerHTML = "Score"
+
+var div1 = document.createElement("div");
+
+var name_box = document.createElement("input");
+name_box.setAttribute("id","username");
+name_box.setAttribute("name","username");
+name_box.setAttribute("id","username");
+name_box.setAttribute("placeholder","Enter name..");
+name_box.setAttribute("type","text");
+div1.append(name_box);
+
+var div2 = document.createElement("div");
+
+var save = document.createElement("a");
+save.setAttribute("id","saveScoreBtn");
+save.setAttribute("href","#");
+save.setAttribute("onClick","savescore()");
+save.setAttribute("class","btn btn-light");
+save.innerHTML = "Save"
+div2.append(save);
+
+var div3 = document.createElement("div");
+
+var again = document.createElement("a");
+again.setAttribute("id","playAgain");
+again.setAttribute("href","game.html");
+again.setAttribute("class","btn btn-light");
+again.innerHTML = "Play Again"
+div3.append(again);
+
+
+var div4 = document.createElement("div");
+
+var home = document.createElement("a");
+home.setAttribute("id","goHome");
+home.setAttribute("href","index.html");
+home.setAttribute("class","btn btn-light");
+home.innerHTML = "Home"
+div4.append(home);
+
+//append to col 12
+col12.append(h2, div1, div2, div3, div4);
+row.append(col12);
+container.append(row);
+document_body.append(container);
+
+h2.innerHTML = localStorage.getItem('Score');
 
 if(JSON.parse(localStorage.getItem('highestlist')))
 {
@@ -73,7 +133,7 @@ function savescore()
     };
     highestlist.push(user);
     highestlist.sort((val1, val2) => val2.score - val1.score);
-    highestlist.splice(5);
+    highestlist.splice(10);
 
     localStorage.setItem('highestlist', JSON.stringify(highestlist));
     //alert(localStorage.getItem('highestlist'));
