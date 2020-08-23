@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-  <title>index</title>
+  <title>Highest Score</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -35,15 +35,45 @@ padding-left:10px
 <body>
 
 
-<div style="margin-top:5%;" class="container">
-<div  class="row">
-<div style="text-align:center" class="col-md-12">
-<h2 id="score">High Scores</h2>
-<div style="font-size:25px; color:blue" id="highestlist"></div>
-</div>
-</div>
-</div>
+
 <script>
+//create dom elements
+var document_body = document.body;
+
+//create main container
+var container = document.createElement("div");
+container.setAttribute("class","container");
+
+//create row
+var row = document.createElement("div");
+row.setAttribute("class","row");
+
+//create col12
+var col12 = document.createElement("div");
+col12.setAttribute("class","col-md-12");
+col12.setAttribute("style","text-align:center");
+
+var heading = document.createElement("h2");
+heading.setAttribute("id","score");
+heading.innerHTML = "High Scores";
+
+var highestlist = document.createElement("div");
+highestlist.setAttribute("id","highestlist");
+highestlist.setAttribute("style","font-size:25px; color:blue");
+
+var home = document.createElement("a");
+home.setAttribute("id","goHome");
+home.setAttribute("href","index.html");
+home.setAttribute("class","btn btn-light");
+home.innerHTML = "Home"
+
+
+col12.append(heading, highestlist, home);
+row.append(col12);
+container.append(row);
+document_body.append(container);
+
+
 var div = document.getElementById("highestlist");
 var result = JSON.parse(localStorage.getItem('highestlist'));
 for(x in result)
