@@ -27,12 +27,12 @@ console.log(`Sum function Result : ${sum_result_value}`);
 
 
 //filter
-  let filter = (ages) =>
+  let filter = (ages, filer_input) =>
   {
     let res_arr = [];
     for(let val of ages)
     {
-      if(val > 20)
+      if(val > filer_input)
       {
         res_arr.push(val);
       }
@@ -40,16 +40,17 @@ console.log(`Sum function Result : ${sum_result_value}`);
     
     return res_arr;
   }
-  let filter_result = filter(ages);
+  let filer_input = 20;
+  let filter_result = filter(ages, filer_input);
   console.log(`Filter function result : ${filter_result}`);
 
 //find
-    let find = (ages) =>
+    let find = (ages, input) =>
     {
      var res
       for(let val of ages)
       {
-        if(val > 20)
+        if(val > input)
         {
           res = val;
           break;
@@ -58,7 +59,8 @@ console.log(`Sum function Result : ${sum_result_value}`);
       
       return res;
     }
-    let find_result_value = find(ages);
+    let input = 20;
+    let find_result_value = find(ages, input);
     console.log(`Find function result : ${find_result_value}`);
 
 //reduce
