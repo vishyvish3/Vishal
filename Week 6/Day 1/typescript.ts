@@ -12,11 +12,15 @@ let chunk = (ages) => {
 var chunk_result  = chunk(ages);
 console.log(`Chunk function Result : ${chunk_result}`);
 
-//reduce
+//sum
 let sum = (ages) =>
 {
-  let sum_result = ages.reduce((total, num) => total + num );
-  return sum_result;
+  let sum_iteration = 0;
+  for(let val of ages)
+  {
+    sum_iteration += val;
+  }
+  return sum_iteration
 }
 let sum_result_value = sum(ages);
 console.log(`Sum function Result : ${sum_result_value}`);
@@ -25,8 +29,16 @@ console.log(`Sum function Result : ${sum_result_value}`);
 //filter
   let filter = (ages) =>
   {
-    let filter_result = ages.filter((obj) => obj > 20 );
-    return filter_result;
+    let res_arr = [];
+    for(let val of ages)
+    {
+      if(val > 20)
+      {
+        res_arr.push(val);
+      }
+    }
+    
+    return res_arr;
   }
   let filter_result = filter(ages);
   console.log(`Filter function result : ${filter_result}`);
@@ -34,8 +46,17 @@ console.log(`Sum function Result : ${sum_result_value}`);
 //find
     let find = (ages) =>
     {
-      let find_result = ages.find((obj) => obj > 20 );
-      return find_result;
+     var res
+      for(let val of ages)
+      {
+        if(val > 20)
+        {
+          res = val;
+          break;
+        }
+      }
+      
+      return res;
     }
     let find_result_value = find(ages);
     console.log(`Find function result : ${find_result_value}`);
@@ -43,9 +64,14 @@ console.log(`Sum function Result : ${sum_result_value}`);
 //reduce
     let reduce = (ages) =>
     {
-      let reduce_result = ages.reduce((total, num) => total - num );
-      return reduce_result;
-    }
+      let sub_iteration = 100;
+  for(let val of ages)
+  {
+    sub_iteration -= val;
+  }
+  return sub_iteration
+}
+    
     let reduce_result_value = reduce(ages);
     console.log(`Reduce function result : ${reduce_result_value}`);
 
