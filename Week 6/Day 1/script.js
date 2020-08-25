@@ -21,31 +21,33 @@ var sum = function (ages) {
 var sum_result_value = sum(ages);
 console.log("Sum function Result : " + sum_result_value);
 //filter
-var filter = function (ages) {
+var filter = function (ages, filer_input) {
     var res_arr = [];
     for (var _i = 0, ages_2 = ages; _i < ages_2.length; _i++) {
         var val = ages_2[_i];
-        if (val > 20) {
+        if (val > filer_input) {
             res_arr.push(val);
         }
     }
     return res_arr;
 };
-var filter_result = filter(ages);
+var filer_input = 20;
+var filter_result = filter(ages, filer_input);
 console.log("Filter function result : " + filter_result);
 //find
-var find = function (ages) {
+var find = function (ages, input) {
     var res;
     for (var _i = 0, ages_3 = ages; _i < ages_3.length; _i++) {
         var val = ages_3[_i];
-        if (val > 20) {
+        if (val > input) {
             res = val;
             break;
         }
     }
     return res;
 };
-var find_result_value = find(ages);
+var input = 20;
+var find_result_value = find(ages, input);
 console.log("Find function result : " + find_result_value);
 //reduce
 var reduce = function (ages) {
