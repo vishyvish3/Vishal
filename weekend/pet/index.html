@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pets Shop</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  .bg-dark {
+    background-color: darkcyan!important;
+}
+.navbar-dark .navbar-brand {
+    color: #33e3b2de !important;
+    font-weight: bold!important;;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: white!important
+}
+</style>
+</head>
+<body>
+<div style="text-align: center;"><img style="width: 200px; margin-bottom: 10px; margin-top:6px" src="img/logo.png"></div>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Boby & Nina Pet Shop</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" onclick="viewInsertForm(event)" href="#">Add Pets</a>
+      </li>
+      <li class="nav-item">
+        <a id="view_pets" class="nav-link" onclick="viewPets(event)" href="#">View Pets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="petsCount(event)">Pets Count</a>
+      </li>   
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="enquirePets(event) ">Store Enquiry</a>
+      </li> 
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="firstFiveEnquiry(event) ">First Five Enquiries</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="matchingData(event) ">Matching data</a>
+      </li> 
+    </ul>
+  </div>  
+</nav>
+<br>
+
+<div class="container">
+  <div style="display: none;" id="contact_form" class="row">
+    <div class="col-md-12">
+      <h3 style="text-align: center;">Insert Pets</h3>
+      <form onsubmit="insertformSubmit(event)">
+        <div class="form-group">
+          <label>Name: </label>
+          <input type="text" class="form-control" id="name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Type: </label>
+          <input type="text" class="form-control" id="type"  required>
+        </div>
+
+        <div class="form-group">
+          <label>Breed: </label>
+          <input type="text" class="form-control" id="breed" required>
+        </div>
+
+        <div class="form-group">
+          <label>Age: </label>
+          <input type="text" class="form-control" id="age" required >
+        </div>
+
+        <div class="form-group">
+          <label>Gender: </label>
+          <input type="text" class="form-control" id="gender" required>
+        </div>
+
+        <div class="form-group">
+          <label>History:  </label>
+          <input type="text" class="form-control" id="history" required>
+        </div>
+    
+       
+        <button id="insert_form_submit" type="submit" class="btn btn-primary">Submit</button>
+      </form> 
+    </div>
+  </div>
+
+  <div  class="row" id="availabilty_table">
+  <div class="col-md-12">
+    <h3 style="text-align: center;">Pets available in the store</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>breed</th>
+          <th>age</th>
+          <th>gender</th>
+          <th>history</th>
+        </tr>
+      </thead>
+       <tbody id="table_body">
+       
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+  
+  <div style="display: none;"  class="row" id="petsCountTable">
+    <div class="col-md-12">
+      <h3 style="text-align: center;">Pets Count</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Pet Type</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+         <tbody id="table_body_counter">
+         
+        </tbody>
+      </table>
+    </div>
+    </div>
+
+    <div  style="display: none;" class="row" id="firstfive">
+      <div class="col-md-12">
+        <h3 style="text-align: center;">First 5 customer enquiry status</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              
+              <th>Status</th>
+            </tr>
+          </thead>
+           <tbody id="table_body_firstfive">
+           
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <div style="display: none;" id="enquiry_form" class="row">
+        <div class="col-md-12">
+          
+          <h3 style="text-align: center;">Enquire Pets</h3>
+          <form onsubmit="insertformSubmit(event)">
+            <div class="form-group">
+              <label>Enter pets</label>
+              <input type="text" class="form-control" placeholder="dog,cat" id="pets_types" required>
+            </div>
+    
+            
+           
+            <button id="enquiry_submit" type="button" onclick="insertEnquirePets()" class="btn btn-primary">Enquire</button>
+          </form> 
+        </div>
+      </div>
+
+      <div style="display: none;" id="matching_data">
+        <h3 style="text-align: center;">Matching Data</h3> 
+       
+        <div id="match" style="text-align: center;" ></div>
+      </div>
+
+  </div>
+  
+  <script src="app.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>
+
+
