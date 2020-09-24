@@ -192,6 +192,7 @@ function viewInsertForm(event){
   document.getElementById("petsCountTable").style.display = 'none';
   document.getElementById("firstfive").style.display = 'none';
   document.getElementById("matching_data").style.display = 'none';
+  document.getElementById("enquiry_form").style.display = 'none';
 }
 
 function insertformSubmit(event){

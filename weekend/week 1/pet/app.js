@@ -146,13 +146,18 @@ console.log(res);
 window.addEventListener('load', function (event) {
     document.getElementById('view_pets').click();
 });
+$('.navbar-nav>li>a').on('click', function(){
+    $('.navbar-collapse').collapse('hide');
+});
 function viewInsertForm(event) {
     event.preventDefault;
+    
     document.getElementById("contact_form").style.display = 'initial';
     document.getElementById("availabilty_table").style.display = 'none';
     document.getElementById("petsCountTable").style.display = 'none';
     document.getElementById("firstfive").style.display = 'none';
     document.getElementById("matching_data").style.display = 'none';
+    document.getElementById("enquiry_form").style.display = 'none';
 }
 function insertformSubmit(event) {
     event.preventDefault();
