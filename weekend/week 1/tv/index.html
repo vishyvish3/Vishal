@@ -15,6 +15,12 @@
         area{
             cursor: pointer;
         }
+         
+        @media screen and (min-width: 1160px) {
+          .remote {
+           position: absolute; top: 21px;right: 13%;"
+          }
+        }
     </style>
 </head>
 
@@ -22,7 +28,7 @@
     <div id="container">
         <img src="./res/tv.jpg" alt="tv.jpg" usemap="#image-map">
      </div>
-     <img style="position: absolute; top: 21px;right: 13%;" src="res/remote.jpg" usemap="#image-map" />
+     <img class="remote"  src="res/remote.jpg" usemap="#image-map" />
     
 
      <map name="image-map">
