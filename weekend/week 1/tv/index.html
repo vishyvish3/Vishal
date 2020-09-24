@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TV App</title>
+    <style>
+        video{
+            position: absolute;
+            top: 40px;
+            left: 32px;
+            width: 850px;
+        }
+        area{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <img src="./res/tv.jpg" alt="tv.jpg" usemap="#image-map">
+     </div>
+     <img style="position: absolute; top: 21px;right: 13%;" src="res/remote.jpg" usemap="#image-map" />
+    
+
+     <map name="image-map">
+        <area  onclick="TV('power')" coords="28,27,17" shape="circle">
+        <area  onclick="TV('mute')" coords="70,53,14" shape="circle">
+        <area  onclick="TV('pause')" coords="48,106,15" shape="circle">
+        <area  onclick="TV('nextChannel')" coords="66,93,83,120" shape="rect">
+        <area  onclick="TV('prevChannel')" coords="12,92,31,120" shape="rect">
+        <area  onclick="TV('increaseVolume')" coords="34,73,66,75,69,87,25,86" shape="poly">
+        <area  onclick="TV('decreaseVolume')" coords="35,126,61,126,61,137,35,140" shape="poly">
+    </map>
+ 
+    <script src="app.js"></script>
+</body>
+
+</html>
