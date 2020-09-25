@@ -182,143 +182,138 @@ console.log(res)
 //DOM MANIPULATION 
 
 window.addEventListener('load', (event) => {
-    document.getElementById('view_pets').click();
+    (<HTMLSelectElement>document.getElementById('view_pets')).click();
 });
 
-function viewInsertForm(event){
+function viewInsertForm(event: Event): void{
   event.preventDefault;
-  document.getElementById("contact_form").style.display = 'initial';
-  document.getElementById("availabilty_table").style.display = 'none';
-  document.getElementById("petsCountTable").style.display = 'none';
-  document.getElementById("firstfive").style.display = 'none';
-  document.getElementById("matching_data").style.display = 'none';
-  document.getElementById("enquiry_form").style.display = 'none';
+  (<HTMLSelectElement>document.getElementById("contact_form")).style.display = 'initial';
+  (<HTMLSelectElement>document.getElementById("availabilty_table")).style.display = 'none';
+  (<HTMLSelectElement>document.getElementById("petsCountTable")).style.display = 'none';
+  (<HTMLSelectElement>document.getElementById("firstfive")).style.display = 'none';
+  (<HTMLSelectElement>document.getElementById("matching_data")).style.display = 'none';
+  (<HTMLSelectElement>document.getElementById("enquiry_form")).style.display = 'none';
 }
 
-function insertformSubmit(event){
+function insertformSubmit(event: Event): void{
   event.preventDefault();
-  var name = document.getElementById("name").value;
-  var type = document.getElementById("type").value;
-  var breed = document.getElementById("breed").value;
-  var age = document.getElementById("age").value;
-  var gender = document.getElementById("gender").value;
-  var history = document.getElementById("history").value;
+  var name: string = (<HTMLSelectElement>document.getElementById("name")).value;
+  var type: string = (<HTMLSelectElement>document.getElementById("type")).value;
+  var breed: string = (<HTMLSelectElement>document.getElementById("breed")).value;
+  var age: number  = +(<HTMLSelectElement>document.getElementById("age")).value;
+  var gender: string = (<HTMLSelectElement>document.getElementById("gender")).value;
+  var history: string = (<HTMLSelectElement>document.getElementById("history")).value;
   availabilityObj.insert({name: name, breed: breed, age: age, gender: gender, history:history,  type: type})
   alert("Added to pets list !! Click on view pets link to checkout the pets list.");
-  
   }
 
-  function enquirePets(event){
+  function enquirePets(event: Event): void{
     event.preventDefault();
-    document.getElementById("contact_form").style.display = 'none';
-    document.getElementById("availabilty_table").style.display = 'none';
-    document.getElementById("petsCountTable").style.display = 'none';
-    document.getElementById("firstfive").style.display = 'none';
-    document.getElementById("matching_data").style.display = 'none';
-    document.getElementById("enquiry_form").style.display = 'initial';
-
-    
+    (<HTMLSelectElement>document.getElementById("contact_form")).style.display = 'none';
+    (<HTMLSelectElement>document.getElementById("availabilty_table")).style.display = 'none';
+    (<HTMLSelectElement>document.getElementById("petsCountTable")).style.display = 'none';
+    (<HTMLSelectElement>document.getElementById("firstfive")).style.display = 'none';
+    (<HTMLSelectElement>document.getElementById("matching_data")).style.display = 'none';
+    (<HTMLSelectElement>document.getElementById("enquiry_form")).style.display = 'initial';
     }
 
-    function insertEnquirePets(){
-        
-        var pets_types = document.getElementById("pets_types").value;
+    function insertEnquirePets(): void | boolean{
+        var pets_types: string = (<HTMLSelectElement>document.getElementById("pets_types")).value;
         if(!pets_types){
             alert ("enter pet types !!");
             return false;
         }
-        var pets_array = pets_types.split(",");
+        var pets_array: string[] = pets_types.split(",");
         console.log(pets_array)
         requestobject.insert(pets_array);
         console.log(requestobject.customerRequests);
         alert("Thanks for your interest !!");
-        document.getElementById("enquiry_form").style.display = 'none';
-        document.getElementById("availabilty_table").style.display = 'initial';
+        (<HTMLSelectElement>document.getElementById("enquiry_form")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("availabilty_table")).style.display = 'initial';
     }
 
-  function viewPets(event){
-  event.preventDefault();
-  document.getElementById("availabilty_table").style.display = 'initial';
-  document.getElementById("contact_form").style.display = 'none';
-  document.getElementById("petsCountTable").style.display = 'none';
-  document.getElementById("firstfive").style.display = 'none';
-  document.getElementById("enquiry_form").style.display = 'none';
-  document.getElementById("matching_data").style.display = 'none';
-  let i = 1;
-  var table_body =  document.querySelector('#table_body');
-  table_body.innerHTML = '';
-  for(let vals of availabilityObj.pets){
-   
-    table_body.insertAdjacentHTML('beforeend', `<tr>
-      <td> ${i} </td>
-      <td> ${vals["name"]} </td>
-      <td> ${vals["type"]} </td>
-      <td> ${vals["breed"]} </td>
-      <td> ${vals["age"]} </td>
-      <td> ${vals["gender"]} </td>
-      <td> ${vals["history"]} </td>
-      </tr>`);
-  i++;
-  }
+  function viewPets(event: Event): void{
+        event.preventDefault();
+        (<HTMLSelectElement>document.getElementById("availabilty_table")).style.display = 'initial';
+        (<HTMLSelectElement>document.getElementById("contact_form")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("petsCountTable")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("firstfive")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("enquiry_form")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("matching_data")).style.display = 'none';
+        let i: number = 1;
+        var table_body: HTMLSelectElement =  (<HTMLSelectElement>document.querySelector('#table_body'));
+        table_body.innerHTML = '';
+        for(let vals of availabilityObj.pets){
+                table_body.insertAdjacentHTML('beforeend', `<tr>
+                <td> ${i} </td>
+                <td> ${vals["name"]} </td>
+                <td> ${vals["type"]} </td>
+                <td> ${vals["breed"]} </td>
+                <td> ${vals["age"]} </td>
+                <td> ${vals["gender"]} </td>
+                <td> ${vals["history"]} </td>
+                </tr>`);
+            i++;
+        }
  }
 
- function petsCount(event){
-  event.preventDefault();
-  document.getElementById("availabilty_table").style.display = 'none';
-  document.getElementById("contact_form").style.display = 'none';
-  document.getElementById("petsCountTable").style.display = 'initial';
-  document.getElementById("firstfive").style.display = 'none';
-  document.getElementById("enquiry_form").style.display = 'none';
-  document.getElementById("matching_data").style.display = 'none';
-  
-  let i = 1;
-  let table_body_counter =  document.querySelector('#table_body_counter');
-  table_body_counter.innerHTML = '';
-  let res = availabilityObj.petsCount()
-  for(let vals of res){
-   console.log(vals);
-    table_body_counter.insertAdjacentHTML('beforeend', `<tr>
-      <td> ${i} </td>
-      <td> ${vals["name"]} </td>
-      <td> ${vals["count"]} </td>
-      </tr>`);
-  i++;
-  }
+ function petsCount(event: Event): void{
+        event.preventDefault();
+        (<HTMLSelectElement>document.getElementById("availabilty_table")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("contact_form")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("petsCountTable")).style.display = 'initial';
+        (<HTMLSelectElement>document.getElementById("firstfive")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("enquiry_form")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("matching_data")).style.display = 'none';
+        
+        let i: number = 1;
+        let table_body_counter: HTMLSelectElement =  (<HTMLSelectElement>document.querySelector('#table_body_counter'));
+        table_body_counter.innerHTML = '';
+        let res: petscounter[] = availabilityObj.petsCount()
+        for(let vals of res){
+                console.log(vals);
+                table_body_counter.insertAdjacentHTML('beforeend', `<tr>
+                <td> ${i} </td>
+                <td> ${vals["name"]} </td>
+                <td> ${vals["count"]} </td>
+                </tr>`);
+                i++;
+                }
  }
  
- function firstFiveEnquiry(event){
-  event.preventDefault();
-  document.getElementById("availabilty_table").style.display = 'none';
-  document.getElementById("contact_form").style.display = 'none';
-  document.getElementById("petsCountTable").style.display = 'none';
-  document.getElementById("matching_data").style.display = 'none';
-  document.getElementById("enquiry_form").style.display = 'none';
-  document.getElementById("firstfive").style.display = 'initial';
-  
-  let i = 1;
-  let table_body_firstfive =  document.querySelector('#table_body_firstfive');
-  table_body_firstfive.innerHTML = '';
-  let res = requestobject.firstFiveEnquiry();
-  for(let vals of res){
-   console.log(vals);
-    table_body_firstfive.insertAdjacentHTML('beforeend', `<tr>
-      <td> Enquiry: ${i} </td>
-      <td> ${vals} </td>
-     </tr>`);
-  i++;
-  }
+ function firstFiveEnquiry(event: Event): void{
+        event.preventDefault();
+        (<HTMLSelectElement>document.getElementById("availabilty_table")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("contact_form")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("petsCountTable")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("matching_data")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("enquiry_form")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("firstfive")).style.display = 'initial';
+        
+        let i: number = 1;
+        let table_body_firstfive: HTMLSelectElement =  (<HTMLSelectElement>document.querySelector('#table_body_firstfive'));
+        table_body_firstfive.innerHTML = '';
+        let res: string[] = requestobject.firstFiveEnquiry();
+        for(let vals of res){
+        console.log(vals);
+            table_body_firstfive.insertAdjacentHTML('beforeend', `<tr>
+            <td> Enquiry: ${i} </td>
+            <td> ${vals} </td>
+            </tr>`);
+        i++;
+        }
  }
 
- function matchingData(event){
-  event.preventDefault();
-  document.getElementById("availabilty_table").style.display = 'none';
-  document.getElementById("contact_form").style.display = 'none';
-  document.getElementById("petsCountTable").style.display = 'none';
-  document.getElementById("firstfive").style.display = 'none';
-  document.getElementById("enquiry_form").style.display = 'none';
-  document.getElementById("matching_data").style.display = 'block';
-  let res = requestobject.matchingData();
-  document.getElementById("match").innerHTML = res;
+ function matchingData(event: Event): void{
+        event.preventDefault();
+        (<HTMLSelectElement>document.getElementById("availabilty_table")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("contact_form")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("petsCountTable")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("firstfive")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("enquiry_form")).style.display = 'none';
+        (<HTMLSelectElement>document.getElementById("matching_data")).style.display = 'block';
+        let res: string = requestobject.matchingData();
+        (<HTMLSelectElement>document.getElementById("match")).innerHTML = res;
  }
 
 
