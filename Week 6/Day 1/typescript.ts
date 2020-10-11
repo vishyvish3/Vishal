@@ -1,19 +1,22 @@
-var ages = [100, 33, 12, 40, 45];
 
-let chunk = (ages) => {
-    let split = 2;
+var ages: number[] = [100, 33, 12, 40, 45, 33, 20];
+
+//chunk function
+let chunk = (arr: number[], size: number): number[][] => {
     let outarr = [];
-    for (let i = 0; i < ages.length; i += split) {
-        outarr.push(ages.slice(i,i+split))
+    for (let i = 0; i < ages.length; i += size) {
+        outarr.push(ages.slice(i,i+size))
     }
+    
     return outarr
 }
 
-var chunk_result  = chunk(ages);
-console.log(`Chunk function Result : ${chunk_result}`);
+var chunk_result  = chunk(ages, 2);
+console.log("Chunk result: ");
+console.log(chunk_result);
 
-//sum
-let sum = (ages) =>
+//sum function
+let sum = (ages: number[]): number =>
 {
   let sum_iteration = 0;
   for(let val of ages)
@@ -26,54 +29,63 @@ let sum_result_value = sum(ages);
 console.log(`Sum function Result : ${sum_result_value}`);
 
 
-//filter
-  let filter = (ages, filer_input) =>
+//filter function
+  let filter = (ages: number[], filter: number): number[] | string =>
   {
     let res_arr = [];
     for(let val of ages)
     {
-      if(val > filer_input)
+      
+      if(val == filter)
       {
-        res_arr.push(val);
+         res_arr.push(val);
       }
     }
+    if(res_arr.length > 0){
+        return res_arr;
+    }else{
+        return 'not found';
+    }
     
-    return res_arr;
   }
-  let filer_input = 20;
-  let filter_result = filter(ages, filer_input);
+  let filter_input: number = 1000;
+  let filter_result = filter(ages, filter_input);
   console.log(`Filter function result : ${filter_result}`);
 
-//find
-    let find = (ages, input) =>
+//find function
+    let find = (ages: number[], input: number): number | string =>
     {
-     var res
+     var res: number = 0;
       for(let val of ages)
       {
-        if(val > input)
+        if(val == input)
         {
           res = val;
           break;
         }
       }
+
+    if(res){
+        return res;
+    }else{
+        return 'not found';
+    }
       
-      return res;
     }
     let input = 20;
     let find_result_value = find(ages, input);
     console.log(`Find function result : ${find_result_value}`);
 
-//reduce
-    let reduce = (ages) =>
+//reduce function
+    let reduce = (ages: number[]): number =>
     {
       let sub_iteration = 100;
-  for(let val of ages)
-  {
-    sub_iteration -= val;
-  }
-  return sub_iteration
-}
+        for(let val of ages)
+        {
+            sub_iteration -= val;
+        }
+    return sub_iteration
+    }
     
     let reduce_result_value = reduce(ages);
     console.log(`Reduce function result : ${reduce_result_value}`);
-
