@@ -1,0 +1,536 @@
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, intial-scale=1.0">
+<style>
+.container{
+    width: 1000px;
+    margin: auto;
+	    box-shadow: 0 1px 10px 2px #ccc;
+}
+.slant1
+{
+position:relative;
+width:100%;
+height:500px;
+background:rbga(40,40,40,1);
+box-sizing:border-box;
+padding:30px;
+color:white;
+text-align: center;
+padding-top: 89px;
+}
+.slant1:after
+{
+position:absolute;
+width:100%;
+height:100%;
+content:'';
+background:#1f1627;
+z-index:-1;
+top:0;
+right:0;
+bottom:0;
+transform-origin: top left;
+
+ background-image: url("img/top1.jpg");
+     background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slant2
+{
+position:relative;
+width:100%;
+height:450px;
+background:rbga(40,40,40,1);
+box-sizing:border-box;
+padding:30px;
+color:black;
+text-align: center;
+padding-top: 89px;
+}
+.slant2:after
+{
+position:absolute;
+width:100%;
+height:100%;
+content:'';
+ background-image: url("img/1.jpg");
+z-index:-1;
+top:0;
+right:0;
+bottom:0;
+transform-origin: top left;
+transform: skewY(-3deg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.slant3
+{
+
+position:relative;
+width:100%;
+height:520px;
+background:rbga(40,40,40,1);
+box-sizing:border-box;
+padding:30px;
+color:white;
+text-align: center;
+padding-top: 89px;
+}
+.slant3:after
+{
+position:absolute;
+width:100%;
+height:100%;
+content:'';
+ background-image: url("img/2.jpg");
+z-index:-1;
+top:0;
+right:0;
+bottom:0;
+transform-origin: top left;
+transform: skewY(-3deg);
+ background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slant4
+{
+
+position:relative;
+width:100%;
+height:510px;
+background:rbga(40,40,40,1);
+box-sizing:border-box;
+padding:30px;
+color:black;
+text-align: center;
+padding-top: 89px;
+}
+.slant4:after
+{
+position:absolute;
+width:100%;
+height:100%;
+content:'';
+ background-image: url("img/3.jpg");
+z-index:-1;
+top:0;
+right:0;
+bottom:0;
+transform-origin: top left;
+transform: skewY(-3deg);
+ background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slant5
+{
+
+position:relative;
+width:100%;
+height:510px;
+background:rbga(40,40,40,1);
+box-sizing:border-box;
+padding:30px;
+color:white;
+text-align: center;
+padding-top: 89px;
+}
+.slant5:after
+{
+position:absolute;
+width:100%;
+height:100%;
+content:'';
+ background-image: url("img/4.jpg");
+z-index:-1;
+top:0;
+right:0;
+bottom:0;
+transform-origin: top left;
+transform: skewY(-3deg);
+ background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.slant6
+{
+
+position:relative;
+width:100%;
+height:480px;
+background:rbga(40,40,40,1);
+box-sizing:border-box;
+padding:30px;
+color:black;
+text-align: center;
+padding-top: 89px;
+}
+.slant6:after
+{
+position:absolute;
+width:100%;
+height:100%;
+content:'';
+ background-image: url("img/5.jpg");
+z-index:-1;
+top:0;
+right:0;
+bottom:0;
+transform-origin: top left;
+transform: skewY(-3deg);
+ background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.slant7
+{
+
+position:relative;
+width:100%;
+height:500px;
+background:rbga(40,40,40,1);
+box-sizing:border-box;
+padding:30px;
+color:white;
+text-align: center;
+padding-top: 89px;
+}
+.slant7:after
+{
+position:absolute;
+width:100%;
+height:100%;
+content:'';
+ background-image: url("img/6.jpg");
+z-index:-1;
+top:0;
+right:0;
+bottom:0;
+transform-origin: top left;
+transform: skewY(-3deg);
+ background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slant8
+{
+
+position:relative;
+width:100%;
+height:470px;
+background:rbga(40,40,40,1);
+box-sizing:border-box;
+padding:30px;
+color:black;
+text-align: center;
+padding-top: 89px;
+}
+.slant8:after
+{
+position:absolute;
+width:100%;
+height:100%;
+content:'';
+ background-image: url("img/7.jpg");
+z-index:-1;
+top:0;
+right:0;
+bottom:0;
+transform-origin: top left;
+transform: skewY(-3deg);
+ background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slant9
+{
+
+position:relative;
+width:100%;
+height:480px;
+background:rbga(40,40,40,1);
+box-sizing:border-box;
+padding:30px;
+color:black;
+text-align: center;
+padding-top: 89px;
+}
+.slant9:after
+{
+position:absolute;
+width:100%;
+height:100%;
+content:'';
+ background-image: url("img/8.jpg");
+z-index:-1;
+top:0;
+right:0;
+bottom:0;
+transform-origin: top left;
+transform: skewY(-3deg);
+ background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slant10
+{
+top: -54px;
+    position: relative;
+    background-color: #DBDCDE;
+    width: 100%;
+    height: 423px;
+    background: rbga(40,40,40,1);
+    box-sizing: border-box;
+    padding: 30px;
+    color: black;
+    text-align: center;
+    padding-top: 89px;
+}
+body
+{
+padding:0px; margin:0px
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="slant1">
+<div><img style="width: 238px;position: relative;top: -59px;" src="img/1.png" /></div>
+<div style="padding-left: 76px;
+    font-size: 27px;
+    letter-spacing: 11px;
+    color: #D5B3B7;
+    margin-top: 22px;
+    margin-bottom: 29px;"><img style="position: absolute;
+    width: 208px;
+    top: 124px;
+    left: 125px;" src="letters/sw.png"/>CROLLING IN WEB DESIGN</div>
+<div><img src="img/2.png" /></div>
+<div style="margin-top: 17px;font-size: 26px;letter-spacing: 9px;">THE LONG & THE SHORT OF IT</div>
+</div>
+<div class="slant2">
+
+<div style="    margin-left: -10px;
+    font-size: 35px;
+ 
+    margin-top: 18px;
+    margin-bottom: 29px;"><img style=" position: absolute;
+    width: 340px;
+    top: 7px;
+    left: 70px;" src="letters/l.png"/><b>ONG SCROLL:</b><span style="font-size:24px;"> THE GOOD STUFF<span></div>
+<div style="    margin-top: 58px;
+    text-align: left;
+    padding-left: 225px;
+    font-size: 23px;">VISUAL CREATIVITY</div>
+<div style="text-align: left;
+    padding-left: 227px;
+    font-size: 17px;
+    margin-top: 10px;">There’s more visual freedom in parallax website design. Rather than <br>
+focusing on block style information architecture, you can create <br>
+refreshing and engaging visuals such as animations or beautiful <br>
+photography, that act as a continuum, ultimately inspiring users to <br>
+scroll further down the page.</div>
+</div>
+
+<div class="slant3">
+<div style="     margin-left: -10px;
+    font-size: 35px;
+    margin-top: 41px;
+    margin-bottom: 29px;
+    padding-left: 164px;"><img style="     position: absolute;
+    width: 291px;
+    top: 77px;
+    left: 277px;
+    z-index: 0;" src="letters/sw.png"/>TORY TELLING <br>  OPPURTUNITIES<div style="font-size:24px;"> </div></div>
+
+<div style="text-align: left;
+    padding-left: 410px;
+    font-size: 17px;
+    margin-top: 50px;">Do you want to tell a story with your product or service? <br>
+Long-scrolling lends itself well to a narrative and <br>
+encourages meaningful interaction from users.</div>
+</div>
+
+<div class="slant4">
+<div style="    margin-left: -10px;
+    font-size: 35px;
+ 
+    margin-top: 18px;
+    margin-bottom: 29px;"><img style=" position: absolute;
+    width: 340px;
+    top: 7px;
+    left: 70px;" src="letters/l.png"/><b>ONG SCROLL:</b><span style="font-size:24px;"> THE GOOD STUFF<span></div>
+<div style="    margin-top: 58px;
+    text-align: left;
+    padding-left: 225px;
+    font-size: 23px;">VISUAL CREATIVITY</div>
+<div style="text-align: left;
+    padding-left: 227px;
+    font-size: 17px;
+    margin-top: 10px;">There’s more visual freedom in parallax website design. Rather than <br>
+focusing on block style information architecture, you can create <br>
+refreshing and engaging visuals such as animations or beautiful <br>
+photography, that act as a continuum, ultimately inspiring users to <br>
+scroll further down the page.</div>
+</div>
+
+<div class="slant5">
+<div style="     margin-left: -10px;
+    font-size: 35px;
+    margin-top: 41px;
+    margin-bottom: 29px;
+    padding-left: 164px;"><img style="     position: absolute;
+    width: 291px;
+    top: 77px;
+    left: 277px;
+    z-index: 0;" src="letters/sw.png"/>TORY TELLING <br>  OPPURTUNITIES<div style="font-size:24px;"> </div></div>
+
+<div style="text-align: left;
+    padding-left: 410px;
+    font-size: 17px;
+    margin-top: 50px;">Do you want to tell a story with your product or service? <br>
+Long-scrolling lends itself well to a narrative and <br>
+encourages meaningful interaction from users.</div>
+</div>
+
+
+<div class="slant6">
+<div style="    margin-left: -210px;
+    font-size: 35px;
+ 
+    margin-top: 18px;
+    margin-bottom: 29px;"><img style=" 
+    position: absolute;
+    width: 195px;
+    top: 50px;
+    left: 172px;
+" src="letters/f.png"/><b>asier for users</b></div>
+
+<div style="text-align: left;
+    padding-left: 227px;
+    font-size: 17px;
+    margin-top: 10px;">There’s more visual freedom in parallax website design. Rather than <br>
+focusing on block style information architecture, you can create <br>
+refreshing and engaging visuals such as animations or beautiful <br>
+photography, that act as a continuum, ultimately inspiring users to <br>
+scroll further down the page.</div>
+</div>
+
+<div class="slant7">
+<div style="     margin-left: -10px;
+    font-size: 35px;
+    margin-top: 41px;
+    margin-bottom: 29px;
+    padding-left: 164px;"><img style="     position: absolute;
+    width: 291px;
+    top: 77px;
+    left: 277px;
+    z-index: 0;" src="letters/sw.png"/>TORY TELLING <br>  OPPURTUNITIES<div style="font-size:24px;"> </div></div>
+
+<div style="text-align: left;
+    padding-left: 410px;
+    font-size: 17px;
+    margin-top: 50px;">Do you want to tell a story with your product or service? <br>
+Long-scrolling lends itself well to a narrative and <br>
+encourages meaningful interaction from users.</div>
+</div>
+
+<div class="slant8">
+<div style=" margin-left: -10px;
+    font-size: 35px;
+    margin-top: 18px;
+    margin-bottom: 29px;"><img style="    position: absolute;
+    width: 282px;
+    top: 29px;
+    left: 162px;" src="letters/l.png"/><b>OWER LOAD TIMES</b></div>
+
+<div style="text-align: left;
+    padding-left: 258px;
+    font-size: 17px;
+    margin-top: 61px;
+}">There’s more visual freedom in parallax website design. Rather than <br>
+focusing on block style information architecture, you can create <br>
+refreshing and engaging visuals such as animations or beautiful <br>
+photography, that act as a continuum, ultimately inspiring users to <br>
+scroll further down the page.</div>
+</div>
+
+<div class="slant9">
+<div style="     margin-left: -10px;
+    font-size: 35px;
+    margin-top: 41px;
+    margin-bottom: 29px;
+    padding-left: 164px;"><img style=" position: absolute;
+    width: 308px;
+    top: 59px;
+    left: 226px;
+    z-index: 0;" src="letters/a.png"/>KWARD NAVIGATION<div style="font-size:24px;"> </div></div>
+
+<div style="    text-align: left;
+    padding-left: 410px;
+    font-size: 17px;
+    margin-top: 73px;">Instead of hitting the “back” button, users must scroll back <br>
+up the page which can be frustrating for users who want to <br>
+refer back to a certain element. An easy way around this is <br>
+to include top navigation and have each element anchored <br>
+to a category or section. </div>
+</div>
+
+<div style="    height: 70px;
+    background-color: #DBDCDE;
+    position: relative;
+   
+    transform-origin: top left;
+    transform: skewY(-3deg);"></div>
+
+<div class="slant10">
+
+<div style="float: left;
+    width: 655px;
+    font-size: 25px;
+    text-align: left;
+    padding-left: 34px;
+    color: grey;">
+As one of Brisbane's leading full service digital and creative <br>
+agencies, iFactory will help you achieve a digital solution that<br>
+blends the needs of your business with that of your target<br>
+audience. Our eclectic mix of digital designers, web developers<br>
+and digital marketing specialists come together for one<br>
+purpose – to provide intelligent digital solutions based on your<br>
+business needs.
+</div>
+
+<div style=" float: left;
+    width: 219px;
+    font-size: 18px;
+    text-align: right;
+    padding-left: 20px;
+   ">
+   <img src="img/footer.png" /> <br>
+33 Murray Street Bowen Hills <br>
+Brisbane QLD Australia 4006 <br>
+Phone: +61 7 3844 0577 <br>
+info@ifactory.com.au <br>
+www.ifactory.com.au
+</div>
+</div>
+
+<footer style="    position: relative;
+    top: -23px;
+    padding: 0px 20px;
+">
+<span style="float:left; color:grey; font-size:18px"><b>AUGUST 2017</b></span>  <span style="float:right; color:grey; font-size:18px"><b> SCROLLING IN WEB DESIGN: THE LONG AND THE SHORT OF IT</b></span>
+<div style="clear: both;"></div>
+</footer>
+
+</div>
+
+</body>
+<html>
