@@ -1,1 +1,1 @@
-MYSQL TASK - 1
+MYSQL TASK 1 - Social profile creation
