@@ -207,7 +207,7 @@ db.products.insertMany([
 > db.products.find({$and: [{product_color:"indigo"}, {product_price: 492.00}]});
 
 10. Delete the products which product price value are same
-db.products.aggregate( {
+> db.products.aggregate( {
     "$group": {
         "_id": "$product_price",
         uniqueIds: { $addToSet: "$_id"},
