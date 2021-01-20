@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mongo Task 2</title>
+    <style type="text/css">
+    code 
+    {
+    white-space: pre; 
+    font-family: Consolas,"courier new";
+    color: grey;
+    background-color: #f1f1f1;
+    padding: 2px;
+    font-size: 105%;
+    }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h3>
+            MONGO - TASK 2
+        </h3>
+<code>use guvidb;
+
+    db.user.insertMany([
+        {
+            "id" : 1,
+            "name" : "jack",
+            "email" : "jack@gmail.com",
+            "phone" : 1234567890,
+            "username" : "jack001",
+            "mentor_id": 5
+        },
+        {
+            "id" : 2,
+            "name" : "jim",
+            "email" : "jim@gmaill.com",
+            "phone" : 2345678901,
+            "username" : "jim@gmail.com",
+            "mentor_id" : 4
+        },
+        {
+            "id" : 3,
+            "name" : "blake",
+            "email" : "blake@gmail.com",
+            "phone" : 1333333333,
+            "username" : "blake5000",
+            "mentor_id" : 2
+        },
+        {
+            "id" : 4,
+            "name": "drake",
+            "email": "drake@gmail.com",
+            "phone" : 223454355435,
+            "username" : "drake@yahoo.com",
+            "mentor_id" : 3
+        },
+        {
+            "id" : 5,
+            "name": "rosy",
+            "email" : "rosy@gmail.com",
+            "phone" : 34242343243,
+            "username" : "rosy@gmail.com",
+            "mentor_id": 1
+        }
+        
+        ]);
+    
+        
+        
+        
+        db.codekata.insertMany(
+        [
+        {
+            "id" : 1,
+            "user_id" : 1,
+            "testcase" : "pass"
+        },
+        {
+            "id" : 1,
+            "user_id" : 3,
+            "testcase" : "pass"
+        },
+        {
+            "id" : 1,
+            "user_id" : 4,
+            "testcase" : "fail"
+        },
+        {
+            "id" : 2,
+            "user_id" : 2,
+            "testcase" : "fail"
+        },
+        {
+            "id" : 2,
+            "user_id" : 5,
+            "testcase" : "pass"
+        },
+        {
+            "id" : 2,
+            "user_id" : 4,
+            "testcase" : "pass"
+        },
+        {
+            "id" : 3,
+            "user_id" : 1,
+            "testcase" : "pass"
+        },
+        {
+            "id" : 3,
+            "user_id" : 5,
+            "testcase" : "pass"
+        },
+        {
+            "id" : 4,
+            "user_id" : 1,
+            "testcase" : "pass"
+        },
+        {
+            "id" : 4,
+            "user_id" : 3,
+            "testcase" : "fail"
+        },
+        {
+            "id" : 5,
+            "user_id" : 5,
+            "testcase" : "pass"
+        },
+        {
+            "id" : 5,
+            "user_id" : 1,
+            "testcase" : "pass"
+        }
+        
+        ])
+        
+        db.attendance.insertMany(
+        [
+        {
+            "isodate" : ISODate("2020-10-18T00:00:00.000Z"),
+            "user_id":1,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-10-18T00:00:00.000Z"),
+            "user_id":2,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-10-18T00:00:00.000Z"),
+            "user_id":3,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-10-18T00:00:00.000Z"),
+            "user_id":4,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-10-18T00:00:00.000Z"),
+            "user_id":5,
+            "attendance": "present" 
+        },
+        
+        {
+            "isodate" : ISODate("2020-10-25T00:00:00.000Z"),
+            "user_id":1,
+            "attendance": "absent" 
+        },
+        {
+            "isodate" : ISODate("2020-10-25T00:00:00.000Z"),
+            "user_id":2,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-10-25T00:00:00.000Z"),
+            "user_id":3,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-10-25T00:00:00.000Z"),
+            "user_id":4,
+            "attendance": "absent" 
+        },
+        {
+            "isodate" : ISODate("2020-10-25T00:00:00.000Z"),
+            "user_id":5,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-11-01T00:00:00.000Z"),
+            "user_id":1,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-11-01T00:00:00.000Z"),
+            "user_id":2,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-11-01T00:00:00.000Z"),
+            "user_id":3,
+            "attendance": "absent" 
+        },
+        {
+            "isodate" : ISODate("2020-11-01T00:00:00.000Z"),
+            "user_id":4,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-11-01T00:00:00.000Z"),
+            "user_id":5,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-11-08T00:00:00.000Z"),
+            "user_id":1,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-11-08T00:00:00.000Z"),
+            "user_id":2,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-11-08T00:00:00.000Z"),
+            "user_id":3,
+            "attendance": "absent" 
+        },
+        {
+            "isodate" : ISODate("2020-11-08T00:00:00.000Z"),
+            "user_id":4,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-11-08T00:00:00.000Z"),
+            "user_id":5,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-11-15T00:00:00.000Z"),
+            "user_id":1,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-11-15T00:00:00.000Z"),
+            "user_id":2,
+            "attendance": "present" 
+        },
+        {
+            "isodate" : ISODate("2020-11-15T00:00:00.000Z"),
+            "user_id":3,
+            "attendance": "absent" 
+        },
+        {
+            "isodate" : ISODate("2020-11-15T00:00:00.000Z"),
+            "user_id":4,
+            "attendance": "absent" 
+        },
+        {
+            "isodate" : ISODate("2020-11-15T00:00:00.000Z"),
+            "user_id":5,
+            "attendance": "absent" 
+        }
+        ])
+        
+        
+        db.topics.insertMany(
+        [
+        {
+            "id" : 1,
+            "title": "HTML - JS"
+        },
+        {
+            "id" : 2,
+            "title": "Oops - Typescript"
+        },
+        {
+            "id" : 3,
+            "title": "Data Structures & Algo"
+        },
+        {
+            "id" : 4,
+            "title": "Node - Express - Mongo"
+        },
+        {
+            "id" : 5,
+            "title": "React Js"
+        },
+        {
+            "id" : 6,
+            "title": "AWS"
+        }
+        ])
+        
+        
+        db.task_details.insertMany([
+        {
+            "id": 1,
+            "description": "Create a responsive website for a hotel by generating elements in the DOM with Javascript",
+            "isodate" : ISODate("2020-10-18T00:00:00.000Z")
+        },
+        {
+            "id": 2,
+            "description": "Create inventory for toys shop by implementing oops concepts",
+            "isodate" : ISODate("2020-10-18T00:00:00.000Z")
+        },
+        {
+            "id": 3,
+            "description": "Implement graph depth search and BST in JS",
+            "isodate" : ISODate("2020-10-25T00:00:00.000Z")
+        },
+        {
+            "id": 4,
+            "description": "Create user register - login with forgot password functionality",
+            "isodate" : ISODate("2020-11-01T00:00:00.000Z")
+        },
+        {
+            "id": 5,
+            "description": "Create ecommerce admin panel - React project",
+            "isodate" : ISODate("2020-11-08T00:00:00.000Z")
+        },
+        {
+            "id": 6,
+            "description": "Deploy the capstone project in aws server",
+            "isodate" : ISODate("2020-11-15T00:00:00.000Z")
+        }
+        ]);
+        
+        
+        db.task.insertMany(
+        [
+        {
+            "id": 1,
+            "user_id": 1,
+            "status": "completed"
+        },
+        {
+            "id": 1,
+            "user_id": 2,
+            "status": "completed"
+        },
+        {
+            "id": 1,
+            "user_id": 3,
+            "status": "completed"
+        },
+        {
+            "id": 1,
+            "user_id": 4,
+            "status": "completed"
+        },
+        {
+            "id": 1,
+            "user_id": 5,
+            "status": "completed"
+        },
+        {
+            "id": 2,
+            "user_id": 1,
+            "status": "completed"
+        },
+        {
+            "id": 2,
+            "user_id": 2,
+            "status": "completed"
+        },
+        {
+            "id": 2,
+            "user_id": 3,
+            "status": "completed"
+        },
+        {
+            "id": 2,
+            "user_id": 4,
+            "status": "completed"
+        },
+        {
+            "id": 2,
+            "user_id": 5,
+            "status": "completed"
+        },
+        {
+            "id": 3,
+            "user_id": 1,
+            "status": "completed"
+        },
+        {
+            "id": 3,
+            "user_id": 2,
+            "status": "completed"
+        },
+        {
+            "id": 3,
+            "user_id": 3,
+            "status": "completed"
+        },
+        {
+            "id": 3,
+            "user_id": 4,
+            "status": "pending"
+        },
+        {
+            "id": 3,
+            "user_id": 5,
+            "status": "completed"
+        },
+        {
+            "id": 4,
+            "user_id": 1,
+            "status": "completed"
+        },
+        {
+            "id": 4,
+            "user_id": 2,
+            "status": "pending"
+        },
+        {
+            "id": 4,
+            "user_id": 3,
+            "status": "completed"
+        },
+        {
+            "id": 4,
+            "user_id": 4,
+            "status": "pending"
+        },
+        {
+            "id": 4,
+            "user_id": 5,
+            "status": "completed"
+        },
+        {
+            "id": 5,
+            "user_id": 1,
+            "status": "completed"
+        },
+        {
+            "id": 5,
+            "user_id": 2,
+            "status": "completed"
+        },
+        {
+            "id": 5,
+            "user_id": 3,
+            "status": "completed"
+        },
+        {
+            "id": 5,
+            "user_id": 4,
+            "status": "pending"
+        },
+        {
+            "id": 5,
+            "user_id": 5,
+            "status": "completed"
+        },
+        {
+            "id": 6,
+            "user_id": 1,
+            "status": "completed"
+        },
+        {
+            "id": 6,
+            "user_id": 2,
+            "status": "pending"
+        },
+        {
+            "id": 6,
+            "user_id": 3,
+            "status": "completed"
+        },
+        {
+            "id": 6,
+            "user_id": 4,
+            "status": "pending"
+        },
+        {
+            "id": 6,
+            "user_id": 5,
+            "status": "pending"
+        },
+        ])
+        
+        db.mentors.insertMany([
+        {
+            "id" :1,
+            "name": "James Smith"
+        },
+        
+        {
+            "id" :2,
+            "name": "Kelly"
+        },
+        {
+            "id" :3,
+            "name": "Emily Fletcher"
+        },
+        {
+            "id" :4,
+            "name": "Steve G jones"
+        },
+        {
+            "id" :5,
+            "name": "Vishen"
+        },
+        
+        ])
+        
+        db.company_drives.insertMany([
+        {
+            "id": 1,
+            "user_ids": [1,2,3,4,5],
+            "isodate": ISODate("2020-10-20T00:00:00.000Z"),
+            "name": "SpaceX",
+        },
+        {
+            "id": 2,
+            "user_ids": [1,5],
+            "isodate": ISODate("2020-10-28T00:00:00.000Z"),
+            "name": "Tesla",
+        },,
+        {
+            "id": 3,
+            "user_ids": [1,2,3,5],
+            "isodate": ISODate("2020-11-10T00:00:00.000Z"),
+            "name": "Appian",
+        }
+        ])
+    
+        //1st query
+        db.task_details.aggregate([
+            {$lookup:{from:"topics",localField:"id", foreignField:"id",as:"Topics"}},
+            {$match:{isodate: {$gte: ISODate("2020-10-01T00:00:00Z"), $lte: ISODate("2020-10-31T00:00:00Z")}}},
+            ]);
+        
+            //2nd query
+            db.company_drives.aggregate(
+            [
+                {$match:{isodate: {$gte: ISODate("2020-10-15T00:00:00.000Z"), $lte: ISODate("2020-10-31T00:00:00.000Z")}}},    
+                { "$project": {
+                 "_id": 0,
+                 "Company name": "$name",
+                 "Drive date": "$isodate"
+              }
+            }])
+        
+            //3rd query
+            db.company_drives.aggregate([
+            {$lookup:{from:"user", localField:"user_ids", foreignField:"id", as:"Students"}},
+            {
+                "$project": {
+                    "_id": 0,
+                    "Company name": "$name",
+                    "Drive date": "$isodate",
+                    "Students.id": 1,
+                    "Students.name": 1,
+                    "Students.email": 1,
+            }
+            }
+            ]).pretty();
+        
+            //4th query
+            db.codekata.aggregate([
+                {$match:{testcase:"pass"}},
+                {"$group" : {_id:"$user_id", count:{$sum:1}}},
+                {
+                    "$project": {
+                        "_id": 0,
+                        "user_id": "$_id",
+                        "problems_solved": "$count"
+                }
+                }
+            ]);
+        
+            //5th query
+            db.user.aggregate([
+                {$group : {_id:"$mentor_id", count:{$sum:1}}},
+                {$match: {count:{$gt: 2}}}, 
+                {$lookup:{from:"mentors", localField:"_id", foreignField:"id", as: "mentors"}},
+                {$unwind: "$mentors"},
+                {$project: {"_id": 0, "mentor name:": "$mentors.name"}}
+                ]);
+        
+            //6th query
+            db.attendance.aggregate([
+                {$match : {isodate:{ $gte: ISODate("2020-10-15T00:00:00.000Z"),$lt: ISODate("2020-10-31T00:00:00.000Z")}, 
+                    attendance:"absent"}},
+                    {$group : {_id:"$user_id", count:{$sum:1}}},
+                    {$group : {_id:"_id", count:{$sum:1}}},
+                    {$project: {"_id": 0, "Number of stundents:": "$count"}}
+                ]);
+
+        </code>
+    </div>
+</body>
+</html>
